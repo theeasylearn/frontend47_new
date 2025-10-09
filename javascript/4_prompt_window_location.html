@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>prompt and window.location</h1>
+    <!-- event handling -->
+    <input type="button" value="what do you want to do?" onclick="userChoice();" />
+    <script>
+        //user defined function 
+        function userChoice() {
+            var choice = prompt("what do you want to do (loan/donation/shopping) ?")
+            console.log(choice);
+            if (choice == 'loan') {
+                window.location = "https://www.mudra.org.in/";
+            }
+            else if (choice == 'donation') {
+                window.location = "https://www.impactguru.com";
+            }
+            else if (choice == 'shopping') {
+                window.location = "http://www.amazon.in";
+            }
+            else 
+            {
+                 window.location = "http://www.google.com";
+            }
+        }
+    </script>
+</body>
+
+</html>

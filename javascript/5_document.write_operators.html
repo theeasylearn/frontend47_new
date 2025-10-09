@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>document.write method and operators</h1>
+    <hr>
+    <input type="button" value="do calculation" onclick="doCalculation();">
+    <script>
+        //create user defined function 
+        function doCalculation()
+        {
+            //variables declared in function should be declared using let keyword (local variables)
+            //local variables are only available in function in which it is declared
+            let num1 = prompt("Enter first number",1);
+            let num2 = prompt("Enter second number ",1);
+            //convert input into integer 
+            num1 = parseInt(num1);
+            num2 = parseInt(num2);
+            let add = num1 + num2; //process using arithmetic operator
+            document.write("addition = ",add);
+            //as exercise 
+            // subtraction, multiplication ,division
+        }
+    </script>
+</body>
+</html>

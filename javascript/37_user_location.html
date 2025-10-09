@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="getUserLocation();">Get user's location</button>
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <td>Latitude</td>
+            <td id="td1"></td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td id="td2"></td>
+        </tr>
+        <tr>
+            <td>Accuracy</td>
+            <td id="td3"></td>
+        </tr>
+
+    </table>
+    <script>
+
+        //arrow function
+        let getUserLocation = () => {
+            navigator.geolocation.getCurrentPosition(showlocation);
+        }
+        function showlocation(userLocation) {
+            console.log(userLocation);
+            document.getElementById('td1').innerHTML = userLocation.coords.latitude;
+            document.getElementById('td2').innerHTML = userLocation.coords.longitude;
+            document.getElementById('td3').innerHTML = userLocation.coords.accuracy;
+        }
+    </script>
+</body>
+
+</html>

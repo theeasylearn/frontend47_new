@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Object Cloning</h1>
+    <script>
+        let user = {
+            name: "Ankit",
+            age: 35
+        };
+
+        let clone = {}; // the new empty object
+        console.log(user, clone);
+
+        // clone = user; wrong way it will not copy user into clone, it store reference of user into clone, means if you change user , clone will change and vice versa
+
+        for (let key in user) {
+            clone[key] = user[key];
+        }
+        user.name = "Ankit Patel";
+        clone.age = 40;
+        console.log("after change", user, clone);
+        
+    </script>
+</body>
+
+</html>

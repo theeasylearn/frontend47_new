@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Single Level inheritance</h1>
+    <hr />
+
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+
+            walk() {
+                document.write(`<br/>${this.name} can walk`);
+            }
+            talk() {
+                document.write(`<br/>${this.name} can talk`);
+            }
+        }
+        //create child/derived class 
+        class Student extends Person {
+            constructor(name, language) {
+                //call parent class constructor
+                super(name); //required(compulsory)
+                this.language = language;
+            }
+            read() {
+                //parent class property can be accessed/changed from child class
+                document.write(`<br/> ${this.name} can read ${this.language}`);
+            }
+            write() {
+                document.write(`<br/> ${this.name} can write ${this.language}`);
+            }
+        }
+
+        //create object of child class
+        var s1 = new Student("Ankit", "Javascript");
+        s1.talk();
+        s1.walk();
+
+        s1.read();
+        s1.write();
+
+    </script>
+</body>
+
+</html>

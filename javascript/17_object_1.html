@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>1st way to create object</h1>
+    <p>Addition <span id="s1"></span></p>
+    <p>Subtraction <span id="s2"></span></p>
+    <script>
+        //let object-name = {
+        //     variable-name: value, 
+        //     function-name:function(){
+
+        //     }
+        // }
+        var MyMath = {
+            //property/state variable
+            num1:0,
+            num2:0,
+            getAddition : function(){
+                let temp = this.num1 + this.num2;
+                return temp; 
+            },
+            getSubtraction:function()
+            {
+                let temp = this.num1 - this.num2;
+                return temp;
+            }
+            //develope function for multiplication and division
+        };
+        var number1 = parseInt(prompt("Enter num 1"));
+        var number2 = parseInt(prompt("Enter num 2"));
+        MyMath.num1 = number1
+        MyMath.num2 = number2;
+        var add = MyMath.getAddition();
+        var sub = MyMath.getSubtraction();
+        document.getElementById('s1').innerHTML = add;
+        document.getElementById('s2').innerHTML = sub;
+    </script>
+</body>
+</html>

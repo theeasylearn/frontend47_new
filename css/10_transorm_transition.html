@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div 
+        {
+            position: absolute;
+            left:200px;
+            right:200px;
+            border: 2px solid black;
+        }
+        #round 
+        {
+            height:200px;
+            width:200px;
+            border: 1px solid black;
+            border-radius: 100%;
+            overflow: hidden;
+            border: 10px solid blue;
+            box-sizing: border-box;
+            /* not required */
+            position: absolute;
+            left: calc(50% - 100px);
+            top: calc(50% - 100px);
+            background-color: aliceblue;
+        }
+        #round>img 
+        {
+            height: 100%;
+        }
+        #round>img:hover 
+        {
+            transition-delay: 500ms;
+            transition-duration: 500ms;
+            transition-timing-function: linear;
+            transform:  scale(150%);
+        }
+        #round:hover 
+        {
+            background-color: yellow;
+            animation: change-color 2000ms ease-in infinite reverse;
+        }
+        @keyframes change-color {
+            25%
+            {
+                background-color: #62ff91;
+            }
+            50%
+            {
+                background-color: #9aff62;
+            }
+            75%
+            {
+                background-color:  	#c2ff62;
+            }
+            100%
+            {
+                background-color: #e9ff62;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="round">
+        <img src="images/namaste.png" alt="">
+    </section>
+</body>
+</html>

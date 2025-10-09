@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* type selector */
+        table {
+            height: 100vh;
+            width: 100vw;
+            border-collapse: collapse;
+            /* above property work only on table */
+        }
+
+        tr {
+            height: calc(100vh / 6);
+        }
+
+        td {
+            width: calc(100vw/ 7);
+            font-size: 72px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        thead>tr>td {
+            font-weight: bold;
+        }
+
+        /* psudo class which select first td */
+        td:first-child {
+            color: red;
+        }
+
+        td:last-child {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Sun</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td>Sat</td>
+            </tr>
+        </thead>
+        <tbody id="calendar">
+
+
+        </tbody>
+    </table>
+    <script>
+        function getLastDayOfMonth(year, month) {
+            // month is 0-indexed (0 = January, 11 = December)
+            return new Date(year, month, 0).getDate();
+        }
+        // console.log(getLastDayOfMonth(2025,2));
+        function getDayOfWeek(year, month, day) {
+            // month is 0-indexed (0 = January, 11 = December)
+            const date = new Date(year, month - 1, day);
+            return date.getDay(); // Returns 0-6 (0 = Sunday, 6 = Saturday)
+        }
+        // console.log(getDayOfWeek(2025,7,1));
+        let year = parseInt(prompt("Enter Year", 2025));
+        let month = parseInt(prompt("Enter month", 1));
+        let lastDay = getLastDayOfMonth(year, month);
+        let firstDay = getDayOfWeek(year, month, 1);
+
+        let i = 1;
+        let count = 1;
+        let emptyCount = 0;
+        console.log(firstDay);
+        while (i <= 6) {
+            let td = ``;
+            for (let j = 1; j <= 7 && count <= lastDay; j++, emptyCount++) {
+                if (emptyCount < firstDay) {
+                    td +=`<td></td>`;
+                }
+                else 
+                    td += `<td>${count++}</td>`;
+            }
+            let row = ` <tr>${td}</tr>`;
+            document.getElementById('calendar').innerHTML += row;
+            i++;
+        }    
+    </script>
+</body>
+
+</html>

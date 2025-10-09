@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const fetchData = new Promise((resolve, reject) => {
+            console.log('processing please wait....');
+            const randomBit = Math.round(Math.random());
+            console.log(randomBit); // 0 or 1
+            setTimeout(() => {
+                if(randomBit==1)
+                    resolve("Data received");
+                else 
+                    reject("operation failed");
+            }, 1000);
+        });
+        fetchData.then((msg) => console.log(msg)).catch((error) => console.log(error));
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" width="100%" cellpadding>
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Year</th>
+                <th>Color</th>
+                <th>Engine Type</th>
+                <th>Fuel Type</th>
+                <th>Transmission</th>
+                <th>Number of Doors</th>
+                <th>Seating Capacity</th>
+                <th>Mileage</th>
+                <th>Price</th>
+                <th>Has Sunroof</th>
+                <th>Air Conditioning</th>
+                <th>Safety Features</th>
+                <th>Is Electric</th>
+            </tr>
+        </thead>
+        <tbody id="shop">
+
+        </tbody>
+
+    </table>
+    <script>
+        const cars = [
+            {
+                make: "Toyota",
+                model: "Camry",
+                year: 2022,
+                color: "Red",
+                engineType: "Hybrid",
+                fuelType: "Gasoline",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 25000,
+                price: 25000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Lane Assist"],
+                isElectric: false
+            },
+            {
+                make: "Honda",
+                model: "Civic",
+                year: 2021,
+                color: "Blue",
+                engineType: "Petrol",
+                fuelType: "Gasoline",
+                transmission: "Manual",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 30000,
+                price: 22000,
+                hasSunroof: false,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Traction Control"],
+                isElectric: false
+            },
+            {
+                make: "Ford",
+                model: "Mustang",
+                year: 2023,
+                color: "Black",
+                engineType: "V8",
+                fuelType: "Gasoline",
+                transmission: "Automatic",
+                numberOfDoors: 2,
+                seatingCapacity: 2,
+                mileage: 15000,
+                price: 35000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Lane Assist"],
+                isElectric: false
+            },
+            {
+                make: "Tesla",
+                model: "Model 3",
+                year: 2022,
+                color: "White",
+                engineType: "Electric",
+                fuelType: "Electric",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 20000,
+                price: 45000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Autopilot"],
+                isElectric: true
+            },
+            {
+                make: "Chevrolet",
+                model: "Malibu",
+                year: 2020,
+                color: "Silver",
+                engineType: "4-cylinder",
+                fuelType: "Gasoline",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 35000,
+                price: 18000,
+                hasSunroof: false,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Rearview Camera"],
+                isElectric: false
+            },
+            {
+                make: "BMW",
+                model: "X5",
+                year: 2023,
+                color: "Grey",
+                engineType: "Turbocharged",
+                fuelType: "Diesel",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 7,
+                mileage: 10000,
+                price: 60000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Blind Spot Monitoring"],
+                isElectric: false
+            },
+            {
+                make: "Audi",
+                model: "Q5",
+                year: 2022,
+                color: "Green",
+                engineType: "TDI",
+                fuelType: "Diesel",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 18000,
+                price: 55000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Lane Assist"],
+                isElectric: false
+            },
+            {
+                make: "Mercedes",
+                model: "C-Class",
+                year: 2022,
+                color: "Silver",
+                engineType: "Inline-4",
+                fuelType: "Gasoline",
+                transmission: "Automatic",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 12000,
+                price: 42000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Park Assist"],
+                isElectric: false
+            },
+            {
+                make: "Nissan",
+                model: "Altima",
+                year: 2021,
+                color: "Yellow",
+                engineType: "Inline-4",
+                fuelType: "Gasoline",
+                transmission: "CVT",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 27000,
+                price: 22000,
+                hasSunroof: false,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Rearview Camera"],
+                isElectric: false
+            },
+            {
+                make: "Hyundai",
+                model: "Elantra",
+                year: 2022,
+                color: "Orange",
+                engineType: "Inline-4",
+                fuelType: "Gasoline",
+                transmission: "Manual",
+                numberOfDoors: 4,
+                seatingCapacity: 5,
+                mileage: 22000,
+                price: 20000,
+                hasSunroof: true,
+                airConditioning: true,
+                safetyFeatures: ["ABS", "Airbags", "Forward Collision Warning"],
+                isElectric: false
+            }
+        ];
+        let output = '';
+        cars.map((item, index) => {
+            let temp = '';
+            for (let key in item) {
+                temp+=`<td>${item[key]}</td>`;
+            }
+            let row = `<tr>
+                <td>${index + 1}</td>${temp}</tr>`;
+            output += row;
+        })
+        document.getElementById('shop').innerHTML = output;
+    </script>
+</body>
+
+</html>

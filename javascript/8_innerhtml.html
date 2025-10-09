@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight
+        {
+            font-weight: bold;
+            text-align: center;
+            font-size: large;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>InnerHTML property</h1>
+    <table border="1" align="center" width="80%">
+        <tr>
+            <td>
+                <button onclick="copyText();">Copy Text</button>
+            </td>
+            <td>
+                <button onclick="changeColor();">change color</button>
+                <button onclick="changeClass();">change class</button>
+            </td>
+        </tr>
+        <tr>
+            <td id="td1" width="50%">
+                वन्दे मातरम्! <br/>
+                सुजलां सुफलां <br/>
+                मलयजशीतलाम् <br/>
+                शस्य श्यामलां <br/>
+                मातरम्! <br/>
+                <br/>
+                शुभ्र ज्योत्स्ना पुलकित यामिनीं <br/>
+                फुल्ल कुसुमित द्रुमदल शोभिनीं, <br/>
+                सुहासिनीं सुमधुर भाषिणीं <br/>
+                सुखदां वरदां मातरम्! <br/><br/>
+
+                वन्दे मातरम्! वन्दे मातरम्! <br/>
+            </td>
+            <td id="td2"></td>
+        </tr>
+    </table>
+    <script>
+        function copyText()
+        {
+            var text = document.getElementById('td1').innerHTML;
+            document.getElementById('td2').innerHTML = text;
+        }
+        function changeColor()
+        {
+            document.getElementById('td1').style = "background-color:yellow;color:red";
+            document.getElementById('td2').style = "background-color:yellow;color:red";
+        }
+        function changeClass()
+        {
+             document.getElementById('td1').className = "highlight";
+             document.getElementById('td2').className = "highlight";
+        }
+    </script>
+</body>
+
+</html>

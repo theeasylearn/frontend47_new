@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-lg-6 offset-3">
+                <div class="card">
+                    <div class="card-header text-bg-danger">
+                        <h2 class="text-center">Number Square or Cube Calculator</h2>
+                    </div>
+                    <div class="card-body">
+
+                        <form id="calcForm">
+                            <div class="mb-3">
+                                <label for="number" class="form-label">Enter a Number</label>
+                                <input type="number" class="form-control" id="amount" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Select Operation</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="operation" id="square"
+                                    onchange="calculate(this.value);" value="square" required>
+                                    <label class="form-check-label" for="square">Square</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="operation" id="cube" value="cube"
+                                        onchange="calculate(this.value);" required>
+                                    <label class="form-check-label" for="cube">Cube</label>
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="result" class="mt-4">
+                            <h4>Result:</h4>
+                            <p id="output"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        //arrow functions
+        var getSquare = (number) => number * number;
+        var getQube = number => number * getSquare(number);
+
+        var calculate = (choice) => {
+            // alert('radio button clicked' + choice);
+            var amount = document.getElementById('amount').value;
+            console.log(amount);
+            if (amount === '') {
+                alert('either amount is empty or not valid amount');
+            }
+            else {
+                amount = parseInt(amount);
+                if (choice === 'square') {
+                    document.getElementById('output').innerHTML = getSquare(amount);
+                }
+                else {
+                    document.getElementById('output').innerHTML = getQube(amount);
+                }
+            }
+        }   
+    </script>
+</body>
+
+</html>

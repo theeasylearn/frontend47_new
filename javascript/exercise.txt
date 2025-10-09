@@ -1,0 +1,55 @@
+1) display your resume using document.write method.
+
+loop
+-----------------------
+1) create web page that accept number from user using prompt and display multiplication table of given number in table tag. use javascript. 
+
+
+event 
+---------------
+1) interest calculator for simple and compound interest calculation based upon user input and choice(radio button)
+
+2) extends example 15_event_handling_2.html and findout who is winner. accept name from user 
+
+3) extends above 2 example to develop of tic tac where one player will be computer.
+
+4) develop minesweeper game. 
+
+2) create web page that accept 2 number, start and stop from user using prompt and display multiplication table of given between start and stop in table tag. use javascript. 
+
+
+2) create web page for simple interest calculator using bootstrap. calculate and display interest when user click on button. 
+3) create web page for income taxt calculator using bootstrap for new text regime. calculate and display interest when user click on button. 
+
+4) complete tic tac in two player mode
+5) complete tic tac in one player vs computer 
+
+6) convert amount into words in  (upto 100 crore)
+input : 12345 
+output : ten thousand three hundred forty five.
+special instruction : without decision making statement.
+
+7) create class KB 
+        has property variable bytes 
+        has function getKB which return kilobyte of given bytes 
+
+    create class MB should inherit KB 
+         has function getMB which return megabytes of given bytes
+
+    create class GB should inherit MB 
+         has function getGB which return gigabytes of given bytes
+
+    create class TB should inherit GB 
+         has function getGB which return terabytes of given bytes
+
+map function 
+-----------------------------------------------------------------------------
+1) create web page that display IPL TEAM Name, Captain, Home Ground, Trophy, State using array of object and map function.  display data using card format using bootstrap 
+
+2) create web page that display Bus Routes. 
+    display source, destination, Bus Type, Price, Departure time, no of seats 
+    display data in bootstrap table format, use array of object 
+
+3) filter bus routes based upon source and destination when user press search button. if bus is not available on given source and destination display message but not found. 
+
+4) filter example 1 based upon team name when user click on specific team name button.

@@ -1,0 +1,283 @@
+/* only css code (no need of style tag) 
+    https://www.figma.com/resource-library/color-combinations/
+    Combination 34: Quite clear
+    /* Restaurant */
+*/
+/* font cdn */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+    width: 100%;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    letter-spacing: 1px;
+    font-size: 20px;
+    font-family: "Lato", sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6, header 
+{
+    font-family: "Playfair Display", serif;
+}
+
+body 
+{
+    background-color: #f2f2f2;
+}
+#site-header 
+{
+    background-color: #4d1717;
+    /* change layout using flex */
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo 
+{
+    height: 100px;
+    width: 100px;
+}
+
+#menu 
+{
+    /* change layout using flex (from vertical to horizontal) */
+    display: flex;
+    gap: 20px;
+    list-style-type: none;
+    align-items: center;
+}
+.menu-link 
+{
+    color:white;
+    font-size: x-large;
+    text-transform: uppercase;
+}
+.contact-no 
+{
+    font-size: xx-large;
+}
+#banner 
+{
+    height:600px;
+}
+/* banner has child image then only style will apply  */
+#banner>img 
+{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+#banner-text 
+{
+    position: absolute;
+    top: 300px;
+    width:100%;
+    text-align: center;
+}
+#banner-text>h1 
+{
+    font-size:84px;
+    color:white;
+}
+#banner-text>p 
+{
+    font-size:42px;
+    color:yellow;
+}
+#whyus 
+{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    
+}
+
+#whyus>article 
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding:10px;
+    width:20%;
+    border: 3px solid brown;
+    text-align: center;
+    border-top-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+#whyus>article>img 
+{
+    height:128px;
+}
+#aboutus, #party-hall 
+{
+    background-color:  #4d1717;
+    padding-top:20px;
+    padding-bottom:20px;
+}
+
+#aboutus>header, #party-hall>header 
+{
+    color:white;
+}
+#aboutus>header, #party-hall>header , #contactus>header
+{
+    text-align: center;
+    font-size: 48px;
+}
+#aboutus>article>div 
+{
+    display: flex;
+}
+#aboutus>article>div>p 
+{
+    width:40%;
+}
+#aboutus>article>div>div 
+{
+    width:60%;
+}
+#aboutus>article>div>div 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+#aboutus>article>div>div>img 
+{
+    width:calc(50% - 20px);
+}
+#about-us-p
+{
+    padding:0px 20px; /* 1st value top-bottom 2nd value left and right */
+    text-align: justify;
+    text-indent: 50px;
+    color:white;
+}
+
+#testimonials
+{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+#testimonials>header, #party-hall>header 
+{
+    text-align: center;
+    font-size: 48px;
+}
+#testimonials>div
+{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 10px;
+}
+#testimonials>div>article
+{
+    width:25%;
+    background-color: #cbcbcb;
+    text-align: center;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+#testimonials>div>article>header 
+{
+    background-color: #174d38;
+    color:white;
+    padding:10px;
+    font-size: x-large;
+}
+#testimonials>div>article>footer 
+{
+    font-weight: bold;
+    font-size: x-large;
+}
+#party-hall
+{
+    height: 420px;
+    padding-bottom: 20px;
+}
+#party-hall>div 
+{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+#party-hall>div>figure 
+{
+    width:20%;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+}
+#party-hall img 
+{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+#party-hall>header 
+{
+    margin:10px 0px 20px 0px; /* clock wise top right bottom left */   
+}
+#contactus>header 
+{
+    color:brown;
+}
+#contactus>article 
+{
+    display: flex;
+}
+/* select 1st div of contactus>article */
+#contactus>article>div:first-child 
+{
+    padding:10px;
+    width:50%;
+}
+#contactus>article>div:first-child>p:first-child ,
+#contactus>article>div:nth-child(2)>p:first-child
+{
+    font-weight: bold;
+    font-size: x-large;
+}
+#contactus>article>div:nth-child(2)>p:first-child
+{
+    text-align: center;
+}
+#contactus>article>div:first-child>p
+{
+    line-height: 200%;
+}
+#contactus>article>div:nth-child(2)>span 
+{
+    display: block;
+    flex-direction: column;
+    padding-top:20px;
+    padding-right: 20px;
+}
+#contactus>article>div:nth-child(2)>span>input, #contactus>article>div:nth-child(2)>span>textarea 
+{
+    margin-bottom: 15px;
+    width:100%;
+    padding:10px;
+} 
+#contactus>article>div:nth-child(2)>span>input[type='submit']
+{
+    background-color: #4d1717;
+    color:white;
+    padding:10px;
+}
+#site-footer 
+{
+    background-color: #4d1717;
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+}

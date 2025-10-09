@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>clouser</h1>
+    <script>
+        function outer() {
+            var count = 0;  // variable in outer scope
+            function inner() {
+                count++;
+                return count;
+            }
+            return inner;
+        }
+
+        const counter = outer();
+        console.log(counter()); // 1
+        console.log(counter()); // 2
+        console.log(counter()); // 3
+    </script>
+</body>
+
+</html>

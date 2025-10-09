@@ -1,0 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import "bootstrap/dist/css/bootstrap.min.css";
+import InterestCalculator from './components/interest_calculator';
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<InterestCalculator />)

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Single Level inheritance</h1>
+    <hr />
+
+    <script>
+        //parent class
+        class MyMath
+        {
+            getPi()
+            {
+                //return value of pi 
+                let pi = 3.1415;
+                return pi;
+            }
+            getSquare(number)
+            {
+                let square = number * number;
+                return square;
+            }
+        }
+
+        //derived class
+        class Circle extends MyMath
+        {
+            constructor(radius)
+            {
+                super(); //required
+                this.radius = radius; //create property variable using argument
+                console.log('Circle class constructor is called...');
+            }
+            getArea()
+            {
+                //formula pi * radius * radius 
+                let area = super.getPi() * super.getSquare(this.radius);
+                return area;
+            }
+        }
+        var radius = parseInt(prompt("Enter radius"));
+        //create object of Circle class
+        var c1 = new Circle(radius);
+        var area = c1.getArea();
+        document.write(`area of circle = ${area.toFixed(2)}`);
+        
+    </script>
+</body>
+
+</html>

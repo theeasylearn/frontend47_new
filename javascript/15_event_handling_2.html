@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section {
+            height: 100vh;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 33.33% 33.33% 33.33%;
+        }
+
+        section>div {
+            height: calc(100vh/3);
+            width: calc(100vw/3);
+            border: 1px solid black;
+            background-color: aliceblue;
+            font-size: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .disabled {
+            pointer-events: none;
+            /* Optional: visually indicate that it's disabled */
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+    </section>
+    <SCRIPT>
+        //create list/collection of all the div tags
+        let divs = document.getElementsByTagName('div');
+        console.log(divs);
+        var letter = 'X';
+        for (let index = 0; index < divs.length; index++) {
+            console.log(index);
+            divs[index].innerHTML = '-';
+            divs[index].onclick = function () {
+                this.innerHTML = letter;
+                if (letter === 'X')
+                    letter = '0';
+                else
+                    letter = 'X';
+                this.className = "disabled"; //button disabled;
+            }
+        }
+    </SCRIPT>
+</body>
+
+</html>

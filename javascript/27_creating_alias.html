@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Creating Alias</h1>
+    <script>
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+
+            walk() {
+                document.write(`<br/>${this.name} can walk`);
+            }
+            talk() {
+                document.write(`<br/>${this.name} can talk`);
+            }
+        }
+        let p1 = new Person('Ankit Patel');
+        // p1.walk();
+        // p1.talk();
+        // wrong way
+        // let walk = p1.walk;
+        // let talk = p1.talk;
+
+        //right way 
+        let walk = p1.walk.bind(p1);
+        let talk = p1.talk.bind(p1);
+
+        walk(); 
+        talk();
+        
+    </script>
+</body>
+
+</html>

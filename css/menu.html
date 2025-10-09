@@ -1,0 +1,296 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resturant Menu Card With Filter</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
+
+body {
+font-family: "Montserrat", sans-serif;
+}
+
+.card-contain {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+
+}
+
+.card {
+width: 295px;
+overflow: hidden;
+border-radius: 25px;
+border: 1px solid lavender;
+margin: 10px;
+box-shadow: 5px 5px 15px 5px rgba(230, 230, 250, 1);
+}
+
+.card__image {
+position: relative;
+height: 140px;
+}
+
+.card__image>img {
+max-width: 100%;
+border-bottom-right-radius: 30px;
+transform: rotate(10deg) translate(-15px, -55px);
+position: absolute;
+height: 200px;
+object-fit: cover;
+object-position: center;
+}
+
+.card__info {
+display: flex;
+align-items: flex-end;
+justify-content: space-between;
+padding: 0px 30px 20px 30px;
+}
+
+.card__info h3 {
+font-size: 18px;
+font-weight: 700;
+}
+
+.card__info p {
+font-size: 14px;
+font-weight: 600;
+}
+
+.card__info--price {
+text-align: right;
+color: orangered;
+}
+
+.rect2 {
+position: relative;
+bottom: 315px;
+right: 15px;
+width: 325px;
+height: 230px;
+border: 1px solid lavender;
+border-radius: 0 0px 80px 0;
+background-image: url();
+transform: rotate(10deg);
+object-fit: cover;
+}
+
+.checked {
+color: #ffd700;
+}
+
+
+.menu {
+display: flex;
+justify-content: center;
+margin-top: 100px;
+margin-bottom: 50px;
+}
+
+.menu__filter {
+padding: 8px 16px;
+margin: 0 5px;
+font-size: 14px;
+font-weight: 600;
+border: none;
+border-radius: 20px;
+background-color: rgb(255, 118, 88);
+color: #ffffff;
+cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <button class="menu__filter" data-filter="All">All</button>
+        <button class="menu__filter" data-filter="Breakfast">Breakfast</button>
+        <button class="menu__filter" data-filter="Lunch">Lunch</button>
+        <button class="menu__filter" data-filter="Dinner">Dinner</button>
+    </div>
+
+    <div class="card-contain">
+        <div class="card" data-attr="Breakfast">
+            <div class="card__image">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    alt="Salad" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Salad</h3>
+                    <p>Fresh & sweet</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 3</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Breakfast">
+            <div class="card__image">
+                <img src="https://images.pexels.com/photos/103124/pexels-photo-103124.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Bread Omelet" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Bread Omelet</h3>
+                    <p>Protein</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 5</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Breakfast">
+            <div class="card__image">
+                <img src="https://images.pexels.com/photos/2113556/pexels-photo-2113556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Pancake" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Pancake</h3>
+                    <p>Delicious</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 2</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Lunch">
+            <div class="card__image">
+                <img src="https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    alt="Burger" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Veg Burger</h3>
+                    <p>Fresh & delicious</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 12</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Lunch">
+            <div class="card__image">
+                <img
+                    src="https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Veg Pizza</h3>
+                    <p>Chessy</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 5</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Dinner">
+            <div class="card__image">
+                <img
+                    src="https://images.pexels.com/photos/691114/pexels-photo-691114.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            </div>
+            <div class="card__info" id="Breakfast">
+                <div class="car__info--title">
+                    <h3>Egg Curry</h3>
+                    <p>Curry with egg</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 7</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Dinner">
+            <div class="card__image">
+                <img src="https://images.pexels.com/photos/299348/pexels-photo-299348.jpeg" />
+            </div>
+            <div class="card__info">
+                <div class="car__info--title">
+                    <h3>Chicken Meal</h3>
+                    <p>tasty</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 15</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+        <div class="card" data-attr="Dinner">
+            <div class="card__image">
+                <img
+                    src="https://images.pexels.com/photos/64208/pexels-photo-64208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            </div>
+            <div class="card__info" id="Breakfast">
+                <div class="car__info--title">
+                    <h3>Noodles</h3>
+                    <p>juicy</p>
+                </div>
+                <div class="card__info--price">
+                    <p>$ 5</p>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const menuFilter = document.querySelectorAll(".menu__filter");
+        const card = document.querySelectorAll(".card");
+
+        menuFilter.forEach((filter) => {
+            filter.addEventListener("click", () => {
+                menuFilter.forEach((button) => button.classList.remove("active"));
+                filter.classList.add("active");
+
+                card.forEach((card) => {
+                    card.style.display = "none";
+                    if (
+                        card.getAttribute("data-attr") ===
+                        filter.getAttribute("data-filter") ||
+                        filter.getAttribute("data-filter") === "All"
+                    ) {
+                        card.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

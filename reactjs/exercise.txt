@@ -1,0 +1,35 @@
+1) create reactjs example to display below detail of cricket player using bootstrap
+    Name 
+    Runs 
+    Match
+    50s
+    100S
+    Average 
+
+    create user defined function like 6_function.js 
+2) modify 7_condition.js display month Name in date of birth using decision making statement. 
+3) develop digital clock, and display time in 12 hours format(am/pm). use decision making statement.
+
+4) display cricket match score board of 4 different match using bootstrap responsive layout. refer 
+https://www.cricbuzz.com/
+
+5) display cricket match schedule of different tours using bootstrap. 
+https://www.cricbuzz.com/cricket-schedule/upcoming-series/international
+
+6) update scoreboard.js file, calculate and display total runs, balls, strike rate 
+
+7) display country name, capital, population, Map, Currency using list of object (function components)
+
+8) display Product Name, Photo, Price, Description using list of object (class components)
+
+9) use Reusable components class/function for footer in 26_routing.js
+
+10) create website for school/college using bootstrap 5 theme and convert it into reactjs. 
+    use React Router dom 
+    
+11) create reactjs example of api calling using functional components, do fetch & delete operation use api 
+    https://jsonplaceholder.typicode.com/albums
+
+
+12) create reactjs example of api calling using class components, do fetch & delete operation use api 
+   https://jsonplaceholder.typicode.com/todos

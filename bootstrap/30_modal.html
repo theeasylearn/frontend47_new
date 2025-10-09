@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Login
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Login</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="">
+                                    <div class="row mb-3">
+                                        <label for="email" class="col-form-label col-sm-3">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email" tabindex="1" />
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="password" class="col-form-label col-sm-3">Password</label>
+                                        <div class="col-sm-9">
+                                            <input type="password" class="form-control" id="password"
+                                            tabindex="2" />
+                                        </div>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-danger w-50" data-bs-dismiss="modal" tabindex="3">Login</button>&nbsp;
+                                        <button type="reset" class="btn btn-dark  w-50" data-bs-dismiss="modal" tabindex="4">clear all</button>
+                                    </div>
+                                </form>
+                            </div>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/20994dd270.js" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0px;
+            padding: px;
+        }
+
+        * {
+            margin: 0px;
+            padding: px;
+        }
+
+        section
+        {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+        div {
+            /* 100vh means 100% of viewport (visible area of screen) height */
+            height: calc(100vh/2);
+            
+            /* 100vw means 100% of viewport (visible area of screen) width */
+            width: calc(100vw/2);
+            /* it will count border inside width not outside width */
+            box-sizing: border-box;
+            border: 1px solid black;
+        }
+
+        /* select 1st div tag */
+        div:first-child {
+            background-color: aliceblue;
+            background-image: url('images/earth.png');
+            /* by default if background image dimension is less then tag then image will repeat on x axis and y axis */
+
+        }
+
+        /* select 2nd div tag */
+        div:nth-child(2) {
+            background-color: azure;
+            background-image: url('images/earth.png');
+            background-repeat: repeat-x;
+        }
+        /* select 3rd div tag */
+        div:nth-child(3){
+            background-color: beige;
+            background-image: url('images/earth.png');
+            background-repeat: repeat-y;
+        }
+        
+        /* select 4th div tag */
+        div:nth-child(4){
+            background-color: blanchedalmond;
+            background-image: url('images/earth.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            overflow: scroll;
+        }
+
+    </style>
+</head>
+<body>
+    <section>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ratione accusamus aliquid at, est nobis esse, vitae cumque tempore, dignissimos nam. Accusamus excepturi quo in sunt repellat omnis, quibusdam dolorum dolor totam? Autem id, veritatis, quidem debitis dignissimos saepe ipsam recusandae magnam amet esse maxime temporibus laborum quo totam optio quae architecto sit hic, nesciunt sint. Aspernatur ea magnam quibusdam deleniti molestiae! Temporibus veritatis aliquid vero ratione corporis eum repudiandae rem, sit iusto libero consectetur nam a dolorem veniam ut maiores assumenda quidem fugit explicabo placeat ipsam. Quam doloribus iusto libero minima dolorum cum recusandae, numquam perferendis id nesciunt assumenda similique necessitatibus ipsam neque saepe ut at corporis molestiae. Amet, dolorum? Eos sunt sequi debitis id iste a ullam aperiam culpa laudantium ad voluptatum iusto vero officia harum esse dignissimos consequatur quisquam repellat, velit nobis fugiat voluptas blanditiis quo. Error voluptatum, ipsa, aperiam eius mollitia non beatae repudiandae odio molestias dolor iusto enim deleniti? Reiciendis maxime, excepturi corrupti deleniti natus laudantium maiores nostrum eius, reprehenderit deserunt eveniet fugit hic a repellat accusamus neque quod nam quia at provident distinctio omnis? Tempora, repellendus quos possimus laudantium culpa ea ut doloribus deleniti nemo placeat sit numquam delectus, quis quod ipsam, quam cupiditate!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ratione accusamus aliquid at, est nobis esse, vitae cumque tempore, dignissimos nam. Accusamus excepturi quo in sunt repellat omnis, quibusdam dolorum dolor totam? Autem id, veritatis, quidem debitis dignissimos saepe ipsam recusandae magnam amet esse maxime temporibus laborum quo totam optio quae architecto sit hic, nesciunt sint. Aspernatur ea magnam quibusdam deleniti molestiae! Temporibus veritatis aliquid vero ratione corporis eum repudiandae rem, sit iusto libero consectetur nam a dolorem veniam ut maiores assumenda quidem fugit explicabo placeat ipsam. Quam doloribus iusto libero minima dolorum cum recusandae, numquam perferendis id nesciunt assumenda similique necessitatibus ipsam neque saepe ut at corporis molestiae. Amet, dolorum? Eos sunt sequi debitis id iste a ullam aperiam culpa laudantium ad voluptatum iusto vero officia harum esse dignissimos consequatur quisquam repellat, velit nobis fugiat voluptas blanditiis quo. Error voluptatum, ipsa, aperiam eius mollitia non beatae repudiandae odio molestias dolor iusto enim deleniti? Reiciendis maxime, excepturi corrupti deleniti natus laudantium maiores nostrum eius, reprehenderit deserunt eveniet fugit hic a repellat accusamus neque quod nam quia at provident distinctio omnis? Tempora, repellendus quos possimus laudantium culpa ea ut doloribus deleniti nemo placeat sit numquam delectus, quis quod ipsam, quam cupiditate!</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos ratione accusamus aliquid at, est nobis esse, vitae cumque tempore, dignissimos nam. Accusamus excepturi quo in sunt repellat omnis, quibusdam dolorum dolor totam? Autem id, veritatis, quidem debitis dignissimos saepe ipsam recusandae magnam amet esse maxime temporibus laborum quo totam optio quae architecto sit hic, nesciunt sint. Aspernatur ea magnam quibusdam deleniti molestiae! Temporibus veritatis aliquid vero ratione corporis eum repudiandae rem, sit iusto libero consectetur nam a dolorem veniam ut maiores assumenda quidem fugit explicabo placeat ipsam. Quam doloribus iusto libero minima dolorum cum recusandae, numquam perferendis id nesciunt assumenda similique necessitatibus ipsam neque saepe ut at corporis molestiae. Amet, dolorum? Eos sunt sequi debitis id iste a ullam aperiam culpa laudantium ad voluptatum iusto vero officia harum esse dignissimos consequatur quisquam repellat, velit nobis fugiat voluptas blanditiis quo. Error voluptatum, ipsa, aperiam eius mollitia non beatae repudiandae odio molestias dolor iusto enim deleniti? Reiciendis maxime, excepturi corrupti deleniti natus laudantium maiores nostrum eius, reprehenderit deserunt eveniet fugit hic a repellat accusamus neque quod nam quia at provident distinctio omnis? Tempora, repellendus quos possimus laudantium culpa ea ut doloribus deleniti nemo placeat sit numquam delectus, quis quod ipsam, quam cupiditate!</p>
+        </div>
+    </section>
+</body>
+</html>

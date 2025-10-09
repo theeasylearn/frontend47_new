@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>working with objects</h1>
+    <h3>creating empty object</h3>
+    <h3>adding/updating key into object</h3>
+    <h3>check key exist or not</h3>
+    <b>use console</b>
+    <script>
+        //create empty object 
+        let person = {};
+        // or
+        // let person = new Object();
+        console.log(person);
+        //adding key into object
+        person['name'] = "Ankit Patel";
+        person['age'] = 41;
+
+        person.city = "bhavnagar";
+        person.gender = true;
+
+        console.log("now person object has ", person);
+        //update existing key
+        person['name'] = "Ankit M Patel";
+        person.city = "Baroda";
+        console.log(" person object after update ", person);
+
+        //check if key exist or not 
+        if (person.email === undefined) {
+            alert('email does not exists')
+        }
+        else 
+        {
+            alert(person.email);
+        }
+
+        if("city" in person)
+        {
+            alert(person.city);
+        }
+
+        else 
+        {
+            alert('city does not exists');
+        }
+
+    </script>
+</body>
+
+</html>

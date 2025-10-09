@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="success.html" method="post">
+        <table border="2" align="center" cellpadding="10" width="50%">
+            <tr>
+                <td align="center" colspan="2"><h2>Search Bus</h2></td>
+            </tr>
+            <tr>
+                <td>
+                    Source 
+                </td>
+                <td>
+                    <input type="text" name="source" id="source" 
+                    required list="places" />
+                </td>
+            </tr>
+            <tr>
+                <td>Destination</td>
+                <td>
+                    <input type="text" name="destination" id="destination" 
+                    required list="places" />
+                </td>
+            </tr>
+            <tr>
+                <td>Select Bus type</td>
+                <td>
+                    <input type="checkbox" id="ac" name="ac" value="1"  /> AC 
+                    <input type="checkbox" id="sleeper" name="sleeper" value="2"  /> Sleeper 
+                    <input type="checkbox" id="express" name="express" value="4"  /> Express 
+                    <input type="checkbox" id="gurjarnagari" name="gurjarnagari" value="8"  /> Gurjar nagari 
+
+                </td>
+            </tr>
+            <tr>
+                <td>Select Date</td>
+                <td>
+                    <input type="date" name="jounerydate" id="jounerydate" required />
+                </td>
+            </tr>
+            <tr>
+                <td>Select Seats</td>
+                <td>
+                    <select name="seats" id="seats" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" id="submit" name="submit" value="Search" />
+                    <input type="reset" id="clear" name="clear" value="clear all" />
+                </td>
+            </tr>
+        </table>
+        <datalist id="places">
+            <option value="Ahmedabad" />
+            <option value="Surat" />
+            <option value="Vadodara" />
+            <option value="Rajkot" />
+            <option value="Bhavnagar" />
+            <option value="Jamnagar" />
+            <option value="Gandhinagar" />
+            <option value="Junagadh" />
+            <option value="Anand" />
+            <option value="Nadiad" />
+            <option value="Morbi" />
+            <option value="Mehsana" />
+            <option value="Bharuch" />
+            <option value="Gandhidham" />
+            <option value="Vapi" />
+            <option value="Navsari" />
+            <option value="Porbandar" />
+            <option value="Palanpur" />
+            <option value="Valsad" />
+            <option value="Botad" />
+            <option value="Veraval" />
+            <option value="Amreli" />
+            <option value="Godhra" />
+            <option value="Dahod" />
+            <option value="Patan" />
+            <option value="Kalol" />
+            <option value="Surendranagar" />
+            <option value="Chhota Udaipur" />
+            <option value="Modasa" />
+            <option value="Deesa" />
+            <option value="Dhoraji" />
+            <option value="Jetpur" />
+            <option value="Keshod" />
+            <option value="Manavadar" />
+            <option value="Mandvi" />
+            <option value="Mundra" />
+            <option value="Dwarka" />
+            <option value="Unjha" />
+            <option value="Sanand" />
+            <option value="Himatnagar" />
+            <option value="Visnagar" />
+            <option value="Thangadh" />
+            <option value="Khambhat" />
+            <option value="Wadhwan" />
+            <option value="Dholka" />
+            <option value="Lunawada" />
+            <option value="Petlad" />
+            <option value="Kapadvanj" />
+            <option value="Mahudha" />
+            <option value="Ranavav" />
+        </datalist>
+        
+    </form>
+</body>
+</html>

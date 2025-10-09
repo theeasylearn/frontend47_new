@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>working with array's map function</h1>
+    <table border="1" align="center" width="100%">
+        <tr>
+            <td id="td1"></td>
+            <td id="td2"></td>
+            <td >
+                <table border="1" cellpadding="10">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Runs</th>
+                            <th>Match</th>
+                        </tr>
+                    </thead>
+                    <tbody id="team">
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        let numbers = [12, 45, 78, 23, 56, 89, 34, 67, 21, 90];
+        let players = ["Virat Kohli", "Rohit Sharma", "Sachin Tendulkar", "MS Dhoni", "Kane Williamson", "Steve Smith", "Ben Stokes", "David Warner", "Jasprit Bumrah", "Shakib Al Hasan", 'Rushabh Pant'];
+
+        let td1 = document.getElementById('td1');
+        // for(let index = 0; index < numbers.length; index++) {
+        //    td1.innerHTML += `${numbers[index]} <br/>`; 
+        // } 
+        // or use map function
+        // this map function will run 10 times because numbers has 10 values in it
+        numbers.map(function (item) {
+            td1.innerHTML += `${item} <br/>`;
+        });
+        let output = '';
+        players.map(function (player) {
+            output += `<li>${player}</li>`;
+        });
+        output = "<ol>" + output + "</ol>";
+        document.getElementById('td2').innerHTML = output;
+        //array of object 
+        let scorers = [
+            { name: "Sachin Tendulkar", runs: 18426, matches: 463 },
+            { name: "Virat Kohli", runs: 12898, matches: 274 },
+            { name: "Ricky Ponting", runs: 13704, matches: 375 },
+            { name: "Sanath Jayasuriya", runs: 13430, matches: 445 },
+            { name: "Jacques Kallis", runs: 11579, matches: 328 },
+            { name: "Mahela Jayawardene", runs: 12650, matches: 448 },
+            { name: "Kumar Sangakkara", runs: 14234, matches: 404 },
+            { name: "Chris Gayle", runs: 10480, matches: 301 },
+            { name: "Shahid Afridi", runs: 8064, matches: 398 },
+            { name: "Brian Lara", runs: 10405, matches: 289 }
+        ];
+        let output2 = ``;
+
+        scorers.map((player,count) => {
+            //object destructring 
+            var {name,runs,matches} = player;
+            output2 += `<tr>
+                <td>${count+1}</td>
+                <td>${name}</td>
+                <td>${runs}</td>
+                <td>${matches}</td>
+            </tr>`;
+        });
+        document.getElementById('team').innerHTML = output2;
+    </script>
+</body>
+
+</html>

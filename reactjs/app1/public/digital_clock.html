@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Clock</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: 'SFMono-Regular', 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 700;
+    }
+    .clock-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .clock {
+      font-size: 16rem;
+      text-align: center;
+      background-color: #1a1a1a;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      border: 1px solid #333;
+    }
+    @media (max-width: 768px) {
+      .clock {
+        font-size: 4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container clock-container">
+    <div class="clock" id="clock">00:00:00</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ 
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>working with session storage</h1>
+    <button type="button" id="mybutton" onclick="updateCount();">No of Click
+        <span id="count_label"></span></button>
+    <button type="button" onclick="deleteItem();" >Delete storage item</button>
+    <script>
+        var count = 0;
+        var num = sessionStorage.getItem('num');
+        if (num != null) {
+            count = parseInt(num);
+            document.getElementById('count_label').innerHTML = count;
+        }
+        function updateCount() {
+            count++; //increase count by 1
+            sessionStorage.setItem("num",count);
+            document.getElementById('count_label').innerHTML = count;
+        }
+        var deleteItem = function(){
+            sessionStorage.removeItem("num");
+            alert('item has been deleted');
+            count = 0;
+        }
+    </script>
+</body>
+
+</html>

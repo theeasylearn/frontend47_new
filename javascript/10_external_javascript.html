@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        /* type selector */
+        table {
+            height: 100vh;
+            width: 100vw;
+            border-collapse: collapse;
+            /* above property work only on table */
+        }
+
+        tr {
+            height: calc(100vh / 6);
+        }
+
+        td {
+            width: calc(100vw/ 7);
+            font-size: 72px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        thead>tr>td {
+            font-weight: bold;
+        }
+
+        /* psudo class which select first td */
+        td:first-child {
+            color: red;
+        }
+
+        td:last-child {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>Sun</td>
+                <td>Mon</td>
+                <td>Tue</td>
+                <td>Wed</td>
+                <td>Thu</td>
+                <td>Fri</td>
+                <td>Sat</td>
+            </tr>
+        </thead>
+        <tbody id="calendar">
+
+
+        </tbody>
+    </table>
+    <!-- linking external javascript file -->
+    <script src="calendar.js"></script>
+</body>
+
+</html>

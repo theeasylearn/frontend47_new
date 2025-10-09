@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #pageheader
+        {
+            display: flex;
+            /* horizontal alignment */
+            justify-content: space-between;
+        }
+        #pageheader>ul 
+        {
+            display: flex;
+            list-style-type: none;
+            gap:10px
+        }
+        #pageheader>ul>li>a:link
+        {
+            text-decoration: none;
+            background-color: black;
+            color:white;
+            padding:10px 20px;
+            letter-spacing: 1px;
+            width:120px;
+            display: inline-block;
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        #pageheader>ul>li>a:visited 
+        {
+            background-color: gainsboro;
+            color:black;
+        }
+        #pageheader>ul>li>a:hover 
+        {
+            background-color: yellow;
+            color:black;
+            box-shadow: 5px 5px 5px gray;
+            font-weight: bold;
+        }
+        #pageheader>ul>li>a:active 
+        {
+            background-color: red;
+            color:white;
+        }
+        #pageheader>h1:hover
+        {
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <header id="pageheader">
+        <h1>The easylearn academy</h1>
+        <ul>
+            <li><a href="1_basic_of_css.html">Home</a></li>
+            <li><a href="2_class_selector.html">About us</a></li>
+            <li><a href="3_id_selector.html">Our Products</a></li>
+            <li><a href="4_inline_style.html">Our Services</a></li>
+            <li><a href="5_exertnal_style_sheet.html">Contact us</a></li>
+        </ul>
+    </header>
+</body>
+</html>

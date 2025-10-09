@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>.
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+        section>div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            font-family: "Lora", serif;
+            font-size: 72px;
+            text-align: center;
+        }
+
+        p {
+            font-family: "Roboto", sans-serif;
+            text-align: justify;
+            text-indent: 50px;
+        }
+
+        section>div>article {
+            padding: 10px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* display 5 news for Extra large screen  */
+        /* display 4 news for  large screen  */
+        /* display 3 news for  medium screen  */
+        /* display 2 news for  small screen  */
+        /* display 1 news for  mobile screen  */
+        /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+        @media (min-width: 320px) and (max-width: 480px) {
+
+            /* code in this block will be applied only if device width>320 and <480 */
+            section>div>article {
+                width: 90%;
+                margin: auto;
+                font-size: 21px;
+            }
+
+            section>div>article>header {
+                font-size: 36px;
+            }
+
+            header {
+                font-size: 50px;
+            }
+        }
+
+        /* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+        @media (min-width: 481px) and (max-width: 767px) {
+
+            /* code in this block will be applied only if device width>481 and <767 */
+            section>div>article {
+                width: calc(50% - 20px);
+                font-size: 20px;
+            }
+
+            section>div>article>header {
+                font-size: 30px;
+            }
+
+            header {
+                font-size: 55px;
+            }
+        }
+
+        /* ##Device = Tablets, Ipads (portrait) ##Screen = B/w 768px to 1024px */
+        @media (min-width: 768px) and (max-width: 1024px) {
+
+            /* code in this block will be applied only if device width>768 and <1024 */
+            section>div>article {
+                width: calc(33.33% - 20px);
+                font-size: 19px;
+            }
+
+            section>div>article>header {
+                font-size: 28px;
+            }
+
+            header {
+                font-size: 60px;
+            }
+        }
+
+        /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+        @media (min-width: 1025px) and (max-width: 1280px) {
+
+            /* code in this block will be applied only if device width>1025 and <1280 */
+            section>div>article {
+                width: calc(25% - 20px);
+                font-size: 18px;
+            }
+
+            section>div>article>header {
+                font-size: 24px;
+            }
+            header {
+                font-size: 66px;
+            }
+        }
+
+        /* ##Device = Desktops ##Screen = 1281px to higher resolution desktop */
+        @media (min-width: 1281px) {
+
+            /* code in this block will be applied only if device width>1281 */
+            section>div>article {
+                width: calc(20% - 20px);
+                font-size: 18px;
+            }
+
+            section>div>article>header {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <header>War News</header>
+        <div>
+            <article>
+                <header>
+                    War news 1
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti asperiores laudantium quam
+                    incidunt
+                    exercitationem repellat id. Tempora, voluptatibus eligendi aliquam fugiat eaque vero accusamus
+                    excepturi, possimus harum cupiditate aspernatur reiciendis quam deleniti labore quia! Corrupti,
+                    nobis
+                    qui! Amet explicabo praesentium fuga aperiam quae ea saepe deserunt, sed quod maxime dolore dolorum
+                    hic
+                    ullam laudantium natus adipisci harum labore voluptas cumque et. Quos voluptas corrupti suscipit id,
+                    ad
+                    commodi officiis nostrum aliquid amet dicta necessitatibus delectus illo tempora cumque, corporis
+                    molestias consectetur, reprehenderit perferendis sed facilis ex quibusdam soluta. Quisquam eos
+                    voluptates perferendis esse sint sequi inventore accusantium suscipit saepe aliquid?
+                </p>
+                <footer>
+                    this footer of war new 1
+                </footer>
+            </article>
+            <article>
+                <header>
+                    War news 2
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti asperiores laudantium quam
+                    incidunt
+                    exercitationem repellat id. Tempora, voluptatibus eligendi aliquam fugiat eaque vero accusamus
+                    excepturi, possimus harum cupiditate aspernatur reiciendis quam deleniti labore quia! Corrupti,
+                    nobis
+                    qui! Amet explicabo praesentium fuga aperiam quae ea saepe deserunt, sed quod maxime dolore dolorum
+                    hic
+                    ullam laudantium natus adipisci harum labore voluptas cumque et. Quos voluptas corrupti suscipit id,
+                    ad
+                    commodi officiis nostrum aliquid amet dicta necessitatibus delectus illo tempora cumque, corporis
+                    molestias consectetur, reprehenderit perferendis sed facilis ex quibusdam soluta. Quisquam eos
+                    voluptates perferendis esse sint sequi inventore accusantium suscipit saepe aliquid?
+                </p>
+                <footer>
+                    this footer of war new 2
+                </footer>
+            </article>
+            <article>
+                <header>
+                    War news 4
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti asperiores laudantium quam
+                    incidunt
+                    exercitationem repellat id. Tempora, voluptatibus eligendi aliquam fugiat eaque vero accusamus
+                    excepturi, possimus harum cupiditate aspernatur reiciendis quam deleniti labore quia! Corrupti,
+                    nobis
+                    qui! Amet explicabo praesentium fuga aperiam quae ea saepe deserunt, sed quod maxime dolore dolorum
+                    hic
+                    ullam laudantium natus adipisci harum labore voluptas cumque et. Quos voluptas corrupti suscipit id,
+                    ad
+                    commodi officiis nostrum aliquid amet dicta necessitatibus delectus illo tempora cumque, corporis
+                    molestias consectetur, reprehenderit perferendis sed facilis ex quibusdam soluta. Quisquam eos
+                    voluptates perferendis esse sint sequi inventore accusantium suscipit saepe aliquid?
+                </p>
+                <footer>
+                    this footer of war new 4
+                </footer>
+            </article>
+            <article>
+                <header>
+                    War news 4
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti asperiores laudantium quam
+                    incidunt
+                    exercitationem repellat id. Tempora, voluptatibus eligendi aliquam fugiat eaque vero accusamus
+                    excepturi, possimus harum cupiditate aspernatur reiciendis quam deleniti labore quia! Corrupti,
+                    nobis
+                    qui! Amet explicabo praesentium fuga aperiam quae ea saepe deserunt, sed quod maxime dolore dolorum
+                    hic
+                    ullam laudantium natus adipisci harum labore voluptas cumque et. Quos voluptas corrupti suscipit id,
+                    ad
+                    commodi officiis nostrum aliquid amet dicta necessitatibus delectus illo tempora cumque, corporis
+                    molestias consectetur, reprehenderit perferendis sed facilis ex quibusdam soluta. Quisquam eos
+                    voluptates perferendis esse sint sequi inventore accusantium suscipit saepe aliquid?
+                </p>
+                <footer>
+                    this footer of war new 4
+                </footer>
+            </article>
+            <article>
+                <header>
+                    War news 5
+                </header>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti asperiores laudantium quam
+                    incidunt
+                    exercitationem repellat id. Tempora, voluptatibus eligendi aliquam fugiat eaque vero accusamus
+                    excepturi, possimus harum cupiditate aspernatur reiciendis quam deleniti labore quia! Corrupti,
+                    nobis
+                    qui! Amet explicabo praesentium fuga aperiam quae ea saepe deserunt, sed quod maxime dolore dolorum
+                    hic
+                    ullam laudantium natus adipisci harum labore voluptas cumque et. Quos voluptas corrupti suscipit id,
+                    ad
+                    commodi officiis nostrum aliquid amet dicta necessitatibus delectus illo tempora cumque, corporis
+                    molestias consectetur, reprehenderit perferendis sed facilis ex quibusdam soluta. Quisquam eos
+                    voluptates perferendis esse sint sequi inventore accusantium suscipit saepe aliquid?
+                </p>
+                <footer>
+                    this footer of war new 5
+                </footer>
+            </article>
+        </div>
+        <footer>Developed By :- Ankit Patel</footer>
+    </section>
+</body>
+
+</html>

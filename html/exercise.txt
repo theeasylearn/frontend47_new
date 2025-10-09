@@ -1,0 +1,24 @@
+1) create web page that has 5 inspirational stories. 
+    each story should be inside div tag. 
+        must have name inside heading tag 
+        must have at least 3 paragraphs. each paragraphs must have at least 100 words 
+        must have summery of the story 
+        each story should be hindi language 
+2) create web page that has different regions
+    each region should have IPL team names 
+    each team should have player name 
+    create this web page using list tags 
+
+3) create web page display IPL any one team using table tag 
+    should have logo, team name, home ground, Achievements, key players, introduction 
+
+4) create your resume using only html tag.
+https://images.template.net/wp-content/uploads/2018/11/Free-Basic-Resume-Template2.jpg
+
+5) create forgot password page. 
+
+7) create webpage to search for hotel as per makemytrip.com 
+
+8) create register page same as facebook register page 
+
+9) create registration page for shaadi.com 

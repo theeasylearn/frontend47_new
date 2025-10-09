@@ -1,0 +1,12 @@
+create a web page that has article for each and every indian states. 
+    article should state name, language, capital, history, places to visit, Food to taste, Items to buy etc. 
+create a web page that that different zone for different ipl teams
+    like 
+        north
+        south 
+        east 
+        west 
+    each zone has its own section tag 
+        and teams in article tags
+            each article should have team logo inside figure and figcaption tag 
+            each team member name in aside tag 

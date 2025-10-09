@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>working with cookies</h1>
+    <button type="button" id="mybutton" onclick="updateCount();">No of Click
+        <span id="count_label"></span></button>
+    <button type="button" onclick="deleteCookie();" >Delete Cookie</button>
+    <script src="cookies.js">
+    </script>
+    <script>
+        var count = 0;
+        var num = getCookie('num');
+        if (num != '') {
+            count = parseInt(num);
+            document.getElementById('count_label').innerHTML = count;
+        }
+        function updateCount() {
+            count++; //increase count by 1
+            //store updated count variable's value into cookies
+            setCookie("num", count);
+            document.getElementById('count_label').innerHTML = count;
+        }
+
+        var deleteCookie = function(){
+            setCookie("num",0,-100);
+            alert('cookie has been deleted');
+            count = 0;
+        }
+    </script>
+</body>
+
+</html>

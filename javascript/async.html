@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function fetchData() {
+            return new Promise((resolve, reject) => {
+                console.log('processing, please wait');
+                const randomBit = Math.round(Math.random());
+                console.log(randomBit); // 0 or 1
+                setTimeout(() => {
+                    if (randomBit === 1) {
+                        resolve("Data received");
+                    } else {
+                        reject("Operation failed");
+                    }
+                }, 1000);
+            });
+        }
+
+        async function getData() {
+            try {
+                const msg = await fetchData();
+                console.log(msg);
+            } catch (error) {
+                console.log('Error:', error);
+            }
+        }
+
+        getData();
+    </script>
+</body>
+
+</html>

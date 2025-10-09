@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 align="center">Register</h1>
+    <hr />
+    <form action="success.html" method="post" enctype="multipart/form-data">
+        <table border="2" align="center" width="50%" cellpadding="10">
+            <tr>
+                <td>
+                    fullname
+                </td>
+                <td>
+                    <input type="text" name="fullname" id="fullname" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Email
+                </td>
+                <td>
+                    <input type="email" name="email" id="email" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    password
+                </td>
+                <td>
+                    <input type="password" name="password" id="password" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    aadhar card
+                </td>
+                <td>
+                    <input type="text" name="aadhar" id="aadhar" required
+                    pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Pan card
+                </td>
+                <td>
+                    <input type="text" name="pancard" id="pancard" required 
+                    pattern="[A-Z]{5}[0-9]{4}[A-Z]{1}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Birth Date
+                </td>
+                <td>
+                    <input type="date" name="dob" id="dob" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select Gender
+                </td>
+                <td>
+                    <label for="male">
+                        <input type="radio" name="gender" id="male" value="1" />
+                        Male </label>
+                    <label for="female">
+                        <input type="radio" name="gender" id="female" value="2" /> Female
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>Select facility</td>
+                <td>
+                    <label for="checkbook"><input type="checkbox" name="checkbook" id="checkbook" value="1" /> Cheque
+                        book</label>
+                    <label for="debitcard"><input type="checkbox" name="debitcard" id="debitcard" value="2" /> Debit
+                        card</label>
+                    <label for="creditcard"><input type="checkbox" name="creditcard" id="creditcard" value="4" /> Credit
+                        Card</label>
+                    <label for="netbanking"><input type="checkbox" name="netbanking" id="netbanking" value="8" /> Net
+                        banking</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Select city</td>
+                <td>
+                    <select name="city" id="city" required>
+                        <option value="">Select a city</option>
+                        <option value="mumbai">Mumbai</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="bangalore">Bangalore</option>
+                        <option value="hyderabad">Hyderabad</option>
+                        <option value="ahmedabad">Ahmedabad</option>
+                        <option value="chennai">Chennai</option>
+                        <option value="kolkata">Kolkata</option>
+                        <option value="pune">Pune</option>
+                        <option value="jaipur">Jaipur</option>
+                        <option value="lucknow">Lucknow</option>
+                        <option value="kanpur">Kanpur</option>
+                        <option value="nagpur">Nagpur</option>
+                        <option value="indore">Indore</option>
+                        <option value="thane">Thane</option>
+                        <option value="bhopal">Bhopal</option>
+                        <option value="visakhapatnam">Visakhapatnam</option>
+                        <option value="patna">Patna</option>
+                        <option value="vadodara">Vadodara</option>
+                        <option value="ghaziabad">Ghaziabad</option>
+                        <option value="ludhiana">Ludhiana</option>
+                        <option value="agra">Agra</option>
+                        <option value="nashik">Nashik</option>
+                        <option value="faridabad">Faridabad</option>
+                        <option value="meerut">Meerut</option>
+                        <option value="rajkot">Rajkot</option>
+                        <option value="kalyan">Kalyan</option>
+                        <option value="vasai">Vasai</option>
+                        <option value="varanasi">Varanasi</option>
+                        <option value="srinagar">Srinagar</option>
+                        <option value="aurangabad">Aurangabad</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Select language for message</td>
+                <td>
+                    <select name="language" id="language" required multiple>
+                        <option value="">Select a language</option>
+                        <option value="assamese">Assamese</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="bodo">Bodo</option>
+                        <option value="dogri">Dogri</option>
+                        <option value="gujarati">Gujarati</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="kannada">Kannada</option>
+                        <option value="kashmiri">Kashmiri</option>
+                        <option value="konkani">Konkani</option>
+                        <option value="maithili">Maithili</option>
+                        <option value="malayalam">Malayalam</option>
+                        <option value="manipuri">Manipuri</option>
+                        <option value="marathi">Marathi</option>
+                        <option value="nepali">Nepali</option>
+                        <option value="odia">Odia</option>
+                        <option value="punjabi">Punjabi</option>
+                        <option value="sanskrit">Sanskrit</option>
+                        <option value="santhali">Santhali</option>
+                        <option value="sindhi">Sindhi</option>
+                        <option value="tamil">Tamil</option>
+                        <option value="telugu">Telugu</option>
+                        <option value="urdu">Urdu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <textarea name="address" id="address" required></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Select photo
+                </td>
+                <td>
+                    <input type="file" name="photo" id="photo" required
+                    accept="image/*"  / >
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" name="submit" id="submit" value="Register" />
+                    <input type="reset" name="reset" id="reset" value="clear all" />
+                    <input type="button" name="nothing" id="nothing" value="i can't do anything" />
+                </td>
+            </tr>
+            
+        </table>
+    </form>
+</body>
+
+</html>

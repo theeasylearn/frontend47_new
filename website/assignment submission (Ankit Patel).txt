@@ -1,0 +1,45 @@
+Assignment - 1
+
+1) Quality of trainers
+------------------------------------
+	1. Communication
+	A trainer’s ability to communicate makes all the difference in a classroom. When teaching computer basics, it's not just about relaying information; it's about making sure everyone in the room truly understands. Using simple language, repeating key points, and encouraging questions can open the door for students who might feel shy or unsure.
+	
+	2. Patience
+	Learning computers can be intimidating for beginners. As a trainer, patience goes a long way. Some learners might struggle with what seems like simple steps, and they’ll appreciate a trainer who doesn’t rush, but takes the time to walk them through each detail, no matter how many times it takes.
+
+	3. Subject Knowledge
+	Nothing inspires confidence like a trainer who really knows their stuff. When questions come up, having the right answers and being able to explain the basics of hardware, software, and troubleshooting reassures learners that they’re in capable hands.
+
+	4. Time Management
+	There’s always a lot to cover in a short time. Trainers who plan their sessions well, stick to an agenda, and allocate enough time for both instruction and hands-on practice tend to keep their learners engaged and on track.
+	
+	5. Punctuality
+	Arriving on time and sticking to the schedule shows professionalism. It also sets an example for students and helps build a routine, which is especially important in a training environment.
+	
+	
+	6. Storytelling and Relatable Examples
+	Explaining technical topics through stories or real-life scenarios can make the subject less abstract and more memorable. For instance, comparing computer memory to a notebook people use every day can help beginners grasp new ideas faster.
+	
+	7. Empathy
+	Not everyone learns at the same speed. Trainers who take the time to listen to learners’ concerns and adjust their approach accordingly often find their students more engaged and confident.
+	
+	8. Adaptability
+	Things don’t always go as planned—sometimes a lesson needs to be reworked on the fly, or a group might pick things up slower or faster than expected. Being flexible ensures that no one is left behind.
+	
+	9. Technological Savvy
+	Problems with computers are bound to pop up. It helps if the trainer can troubleshoot basic issues on the spot so the session isn’t derailed.
+	
+	10. Encouragement and a Positive Attitude
+	Learning something new is a big step, and a trainer’s encouragement can turn nerves into excitement. Recognizing progress, celebrating small wins, and maintaining a positive environment can make even the most hesitant learners feel accomplished.
+
+
+2) Roles and Responbility of trainers 
+------------------------------------
+-> Pre training 
+	
+-> during training 
+
+-> post training 
+
+3) 

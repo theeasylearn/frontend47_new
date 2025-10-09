@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>4th technique to create object (ES6 way)</h1>
+    <table border="1">
+        <tr>
+            <td>num1</td>
+            <td id="td1"></td>
+        </tr>
+        <tr>
+            <td>num2</td>
+            <td id="td2"></td>
+        </tr>
+        <tr>
+            <td>Addition</td>
+            <td id="td3"></td>
+        </tr>
+        <!-- repeat process for subtraction, multiplication, division -->
+    </table>
+    <script>
+       //create class 
+       class MyMath
+       {
+            constructor(num1,num2)
+            {
+                //create state/property variable
+                this.num1 = num1;
+                this.num2 = num2;
+                console.log('constructor called....');
+            }
+
+            display()
+            {
+                document.getElementById('td1').innerHTML = this.num1;
+                document.getElementById('td2').innerHTML = this.num2;
+            }
+            addition()
+            {
+                let result = this.num1 + this.num2;
+                document.getElementById('td3').innerHTML = result;
+            }
+       }
+       //create object
+       var num1 = parseInt(prompt("Enter num1"));
+       var num2 = parseInt(prompt("Enter num2"));
+       var m1 = new MyMath(num1,num2); //it will constructor function automatically
+       m1.display();
+       m1.addition();
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+/* universal selector */
+*
+{
+  margin: 0px;
+  letter-spacing: 1px;
+  padding: 0px;
+}
+
+/* type selector */
+body 
+{
+  background-color: aliceblue;
+}
+ul 
+{
+    padding-left: 20px;
+}
+/* class selector style */
+.page-heading
+{
+    background-color: blue;
+    color:white;
+    padding:10px;
+    text-transform: uppercase;
+}
+
+.list 
+{
+    list-style-type: none;
+    width: 20%;
+}
+.list>li
+{
+    line-height: 150%;
+    border-bottom: 1px solid black;
+}

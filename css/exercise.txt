@@ -1,0 +1,98 @@
+Exercise 1: Styling a Simple Profile Card
+
+Objective: Learn how to style text, change fonts, add background color, and center content.
+
+HTML Code to Use:
+
+<div>
+    <h1>John Doe</h1>
+    <p>Web Developer from New York. Loves coding, coffee, and cats.</p>
+</div>
+
+Instructions:
+
+    Create a new HTML file and paste the above code in the <body>.
+
+    Inside a <style> tag in the <head>, write CSS to:
+
+        Change the heading (h1) color to dark green
+
+        Use Arial font for all text
+
+        Center-align the text
+
+        Set background color of the div to #f0f8ff (light blue)
+
+        Add padding of 20px inside the div
+
+✅ Exercise 2: Create a Colored Navigation Bar
+
+Objective: Practice using background-color, padding, and inline block layout.
+
+HTML Code to Use:
+
+<div>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</div>
+
+Instructions:
+
+    Paste the above inside the <body>.
+
+    Write CSS to:
+
+        Set background color of the div to navy blue
+
+        Style the a tags:
+
+            Set text color to white
+
+            Add 10px padding on all sides
+
+            Use display: inline-block; so links appear side-by-side
+
+            Remove underline using text-decoration: none
+
+✅ Exercise 3: Design a Product Box
+
+Objective: Introduce students to borders, box-shadow, and spacing.
+
+HTML Code to Use:
+
+<div>
+    <h2>Wireless Headphones</h2>
+    <p>High quality sound. Noise cancelling. 20 hours battery life.</p>
+</div>
+
+Instructions:
+
+
+    Paste this in your HTML file.
+
+    Write CSS to style the div:
+
+        Add solid gray border (2px)
+
+        Add rounded corners (border-radius: 10px)
+
+        Set a light gray background (#f5f5f5)
+
+        Add box-shadow: 4px 4px 10px #ccc;
+
+        Use margin: 15px; to create space between elements
+
+Exercise 4
+Insert meaningful content and css code to format it in 13_media_query_demo3.html 
+
+
+recreate 13_media_query_demo3.html as responsive website using flex.
+
+Exercise 5 
+develop below design using grid 
+https://vaadin.com/documents/411367/0/css-grid-elements.jpg/f106b6b6-8270-4f94-98be-e870a8758c4f?t=1502746410246
+
+Exercise 6 
+develop below design using grid 
+https://miro.medium.com/v2/resize:fit:1400/1*PitZH36g1vTvLx9Nr-GjVw.png

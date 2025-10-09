@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>3rd technique to create object</h1>
+    <table border="1">
+        <tr>
+            <td>num1</td>
+            <td id="td1"></td>
+        </tr>
+        <tr>
+            <td>num2</td>
+            <td id="td2"></td>
+        </tr>
+        <tr>
+            <td>Addition</td>
+            <td id="td3"></td>
+        </tr>
+        <!-- repeat process for subtraction, multiplication, division -->
+    </table>
+    <script>
+        //create javascript function 
+        function MyMath(num1, num2) {
+            //create property variable
+            this.num1 = num1,
+                this.num2 = num2,
+                this.input = function () {
+                    this.num1 = parseInt(prompt("enter first number"));
+                    this.num2 = parseInt(prompt("enter second number"));
+                },
+                this.display = function () {
+                    document.getElementById('td1').innerHTML = this.num1;
+                    document.getElementById('td2').innerHTML = this.num2;
+                }
+                // develope addtion, subtraction, multiplication, division
+        }
+        //create object variable using myMath
+
+        var m1 = new MyMath();
+        m1.input();
+        m1.display();
+        
+    </script>
+</body>
+
+</html>

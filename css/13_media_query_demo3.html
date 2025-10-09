@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            letter-spacing: 1px;
+        }
+
+        #site {
+            display: grid;
+        }
+
+        #site>article {
+            min-height: 200px;
+            /* temporary */
+            background-color: bisque;
+            border: 1px solid brown;
+            margin-bottom: 10px;
+        }
+
+        #header {
+            grid-area: header;
+        }
+
+        #product1 {
+            grid-area: product1;
+        }
+
+        #product2 {
+            grid-area: product2;
+        }
+
+        #product3 {
+            grid-area: product3;
+        }
+
+        #product4 {
+            grid-area: product4;
+        }
+
+        #aboutus {
+            grid-area: aboutus;
+        }
+
+        #testimonials {
+            grid-area: testimonials;
+        }
+
+        #contactus {
+            grid-area: contactus;
+        }
+
+        /*  ##Device = Most of the Smartphones Mobiles (Portrait) ##Screen = B/w 320px to 479px */
+        @media (min-width: 320px) and (max-width: 480px) {
+
+            /* code in this block will be applied only if device width>320 and <480 */
+            #site {
+                grid-template-columns: 100%;
+                grid-template-rows: repeat(8, auto);
+                grid-template-areas: 
+                "header"
+                "product1"
+                "product2"
+                "product3"
+                "product4"
+                "aboutus"
+                "testimonials"
+                "contactus";
+            }
+        }
+
+        /* ##Device = Low Resolution Tablets,  ##Screen = B/w 481px to 767px */
+        @media (min-width: 481px) and (max-width: 1024px) {
+
+            /* code in this block will be applied only if device width>481 and <767 */
+            #site {
+                grid-template-columns: 50% 50%;
+                grid-template-rows: repeat(6, auto);
+                column-gap: 10px;
+                grid-template-areas:
+                    "header header"
+                    "product1 product2"
+                    "product3 product4"
+                    "aboutus aboutus"
+                    "testimonials testimonials"
+                    "contactus contactus";
+            }
+        }
+
+        /* ##Device = Laptops, Desktops ##Screen = B/w 1025px to 1280px*/
+        @media (min-width: 1025px) {
+            #site {
+                grid-template-columns: repeat(4, 25%);
+                grid-template-rows: repeat(4, auto);
+                column-gap: 10px;
+                grid-template-areas:
+                    "header header  header header"
+                    "product1 product2 product3 product4"
+                    "aboutus aboutus testimonials testimonials"
+                    "contactus contactus contactus contactus";
+            }
+
+        }
+    </style>
+</head>
+<!-- https://www.uxdesigninstitute.com/blog/wp-content/uploads/2023/04/242_responsive_grids_illustration_blog-1.png -->
+
+<body>
+    <section id="site">
+        <article id="header">
+            <h1>Welcome to Our Website</h1>
+            <p>Your one-stop destination for quality products and great service.</p>
+        </article>
+        <article id="product1">
+            <h2>Product 1</h2>
+            <p>High-quality handcrafted item with modern design. Available in multiple colors.</p>
+        </article>
+        <article id="product2">
+            <h2>Product 2</h2>
+            <p>Durable and sustainable product designed for everyday use.</p>
+        </article>
+        <article id="product3">
+            <h2>Product 3</h2>
+            <p>Affordable solution with top-rated performance and customer reviews.</p>
+        </article>
+        <article id="product4">
+            <h2>Product 4</h2>
+            <p>Elegant, functional, and perfect for both personal and professional use.</p>
+        </article>
+        <article id="aboutus">
+            <h2>About Us</h2>
+            <p>We are a passionate team dedicated to providing top-notch products and services to our valued customers.
+            </p>
+        </article>
+        <article id="testimonials">
+            <h2>Testimonials</h2>
+            <p>"Fantastic service and amazing quality!" – A happy customer</p>
+            <p>"Fast delivery and excellent support." – Satisfied client</p>
+        </article>
+        <article id="contactus">
+            <h2>Contact Us</h2>
+            <p>Email: contact@ourcompany.com</p>
+            <p>Phone: +91-9876543210</p>
+            <p>Location: Bhavnagar, Gujarat, India</p>
+        </article>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Working with array</h1>
+    <b>use console</b>
+    <script>
+        //create empty array/list
+        var fruits = [];
+        var states = ["Maharashtra", "Kerala", "Tamil Nadu", "Rajasthan", "West Bengal", "Uttar Pradesh", "Gujarat", "Karnataka", "Andhra Pradesh", "Telangana", "Bihar", "Odisha", "Madhya Pradesh", "Assam", "Jharkhand", "Haryana", "Punjab", "Chhattisgarh", "Uttarakhand", "Himachal Pradesh", "Tripura", "Meghalaya", "Manipur", "Nagaland", "Goa", "Arunachal Pradesh", "Mizoram", "Sikkim"
+        ];
+        
+        console.log("empty list", fruits);
+        console.log("state list", states);
+
+        //insert values into list/array
+        fruits.push('apple');
+        fruits.push('banana');
+        fruits.push('mango');
+        console.log("now fruits has", fruits);
+        fruits.unshift('kiwi');
+        fruits.unshift('pinapple');
+        console.log("now fruits has", fruits);
+        fruits.pop();
+        console.log("now fruits has", fruits);
+        fruits.shift();
+        console.log("now fruits has", fruits);
+        var vegis = ['potato','tomato','lady finger','leamon'];
+        var basket=fruits.concat(vegis);
+        console.log("basket has ", basket);
+        var fridge = basket.slice(0,3); //3 is not including
+        console.log("fridge has ", fridge);
+        //delete 3 values from begining 
+        basket.splice(0,3);
+        console.log("now basket has ", basket);
+        console.log('position of gujarat in state array',states.indexOf('Gujarat')+1);
+        console.log('is state list has Punjab ',states.includes('Punjab'));
+        //sorting 
+        states.sort();
+        console.log('all states in asecnding order',states);
+        //reverse array
+        states.reverse();
+        console.log('all states in desecnding order',states);
+
+        //empty entire list
+        states.length = 0; 
+        // or 
+        // states.splice(0,states.length);
+        console.log('now state array should be empty',states);
+    </script>
+</body>
+
+</html>

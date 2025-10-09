@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ES6 spread operator</h1>
+    <b>use console</b>
+    <script>
+        let list1 = [10, 20, 30];
+        let list2 = [40, 50, 60];
+        let list3 = [...list1, ...list2];
+        console.log(list1, list2, list3);
+        var currentCar = {
+            make: 'Maruti',
+            seat: 4,
+            engine: 'petrol',
+            color: 'white',
+            transmission: 'manual'
+        }; var newCar = {
+            make: 'Audi',
+            seat: 6,
+            engine: 'EV',
+            color: 'black',
+            price: 5500000
+        };
+        let myCar = { ...currentCar, ...newCar };
+        console.log(currentCar, newCar, myCar);
+
+        let result = [];
+        let student1 = { name: 'ram', html: 60, css: 70, javascript: 80 };
+        let student2 = { name: 'shyam', html: 75, css: 65, javascript: 85 };
+        let student3 = { name: 'geeta', html: 80, css: 75, javascript: 90 };
+        result.push(student1);
+        result = [...result,student2,student3];
+        console.log(result);
+    </script>
+</body>
+
+</html>
