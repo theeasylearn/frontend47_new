@@ -1,18 +1,14 @@
-import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import { COOKIE_FILE } from './common';
+import { useParams, useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
-const WithHook = (MyComponent) => {
-  // Define a new functional component inside the HOC
-  const WrappedComponent = (props) => {
-    const params = useParams();
-    const navigate = useNavigate();
-    const [cookies, setCookie, removeCookie] = useCookies(COOKIE_FILE);
+var WithHook = (Component) => {
+  const ComponentWithHooks = (props) => {
+    let params = useParams();
+    let navigate = useNavigate();
+    let [cookies, setCookie, removeCookie] = useCookies();
 
-    // Pass the hooks as props to the wrapped component
     return (
-      <MyComponent
+      <Component
         {...props}
         params={params}
         navigate={navigate}
@@ -22,9 +18,7 @@ const WithHook = (MyComponent) => {
       />
     );
   };
-
-  // Return the new component
-  return WrappedComponent;
+  return ComponentWithHooks;
 };
 
 export default WithHook;

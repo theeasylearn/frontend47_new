@@ -7,7 +7,9 @@ import getBase, { getImageBase } from "./common";
 import { showError, showNetworkError, showMessage } from "./message";
 import { ToastContainer } from "react-toastify";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 class Product extends React.Component {
+  
   render() {
     return (<>
       <Header />
