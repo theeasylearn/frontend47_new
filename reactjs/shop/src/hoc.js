@@ -2,7 +2,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 
 var WithHook = (Component) => {
-  const ComponentWithHooks = (props) => {
+    const ComponentWithHooks = (props) => {
     let params = useParams();
     let navigate = useNavigate();
     let [cookies, setCookie, removeCookie] = useCookies();

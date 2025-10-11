@@ -18,7 +18,7 @@ function MyRouter()
     return (
     <BrowserRouter>
         <Routes>
-            <Route index path='/' element={<Home />} />
+            <Route  index path='/' element={<Home />} />
             <Route  path='/login' element={<Login />} />
             <Route  path='/register' element={<Register />} />
             <Route  path='/forgot-password' element={<ForgotPassword />} />
