@@ -9,53 +9,46 @@ import { ToastContainer } from "react-toastify";
 class Register extends Component {
   constructor(props) {
     super(props);
-    //create state variables
+    //create state variable for each input
     this.state = {
       email: '',
       password: '',
       confirmPassword: '',
-      mobile: '',
+      mobile: ''
     }
+
   }
-  updateValue = (event) => {
-    // console.log(event.target.name + " " + event.target.value);
+  updateValue = (e) => {
     this.setState({
-      [event.target.id]: event.target.value
+      [e.target.id]: e.target.value
     });
-    //  console.log(this.state);
   }
   registerUser = (e) => {
     e.preventDefault();
     console.log(this.state);
+    //api call
     let apiAddress = getBase() + "register.php";
-    console.log(apiAddress);
-    let form = new FormData();
-    form.append("email", this.state.email);
-    form.append("password", this.state.password);
-    form.append("mobile", this.state.mobile);
+    /*
+      [{"error":"input is missing"}]
+      [{"error":"no"},{"success":"no"},{"message":"email or mobile is already register with us"}]
+      [{"error":"no"},{"success":"yes"},{"message":"registered successfully"}]  
+    */
     axios({
       method: 'post',
       responseType: 'json',
-      url: apiAddress,
-      data: form
+      url: apiAddress
     }).then((response) => {
       console.log(response.data);
       let error = response.data[0]['error'];
-      if (error !== 'no')
-        showError(error);
-      else {
-        let success = response.data[1]['success'];
-        let message = response.data[2]['message'];
-        if (success === 'no')
-          showError(message);
-        else {
-          showMessage(message);
-          setTimeout(() => {
-             this.props.navigate("/login");
-          }, 5000);
-        }
+      if (error !== 'no') {
+        alert(error)
       }
-    }).catch((error) => showNetworkError(error));
+      else {
+
+      }
+    }).catch((error) => {
+
+    });
   }
   render() {
     return (<div>
@@ -98,14 +91,17 @@ class Register extends Component {
                       {/* input */}
                       <label htmlFor="email" className="form-label visually-hidden">Email address</label>
                       <input type="email" className="form-control" id="email" placeholder="Email" required
-                        value={this.state.email} onChange={(e) => this.updateValue(e)} />
+                        value={this.state.email}
+                        onChange={(e) => this.updateValue(e)} />
                       <div className="invalid-feedback">Please enter email.</div>
                     </div>
                     <div className="col-12">
                       <div className="password-field position-relative">
                         <label htmlFor="password" className="form-label visually-hidden">Password</label>
                         <div className="password-field position-relative">
-                          <input type="password" className="form-control fakePassword" id="password" placeholder="Password" required value={this.state.password} onChange={(e) => this.updateValue(e)} />
+                          <input type="password" className="form-control fakePassword" id="password" placeholder="Password" required
+                            value={this.state.password}
+                            onChange={(e) => this.updateValue(e)} />
                           <span><i className="bi bi-eye-slash passwordToggler" /></span>
                           <div className="invalid-feedback">Please enter password.</div>
                         </div>
@@ -116,7 +112,9 @@ class Register extends Component {
                         <label htmlFor="confirmPassword" className="form-label visually-hidden">Password</label>
                         <div className="password-field position-relative">
                           <input type="password" className="form-control fakePassword" id="confirmPassword" placeholder="Confirm Password" required
-                            value={this.state.confirmPassword} onChange={(e) => this.updateValue(e)} />
+                            value={this.state.confirmPassword}
+                            onChange={(e) => this.updateValue(e)}
+                          />
                           <span><i className="bi bi-eye-slash passwordToggler" /></span>
                           <div className="invalid-feedback">Please enter password.</div>
                         </div>
@@ -126,7 +124,8 @@ class Register extends Component {
                       {/* input */}
                       <label htmlFor="mobile" className="form-label visually-hidden">Mobile</label>
                       <input type="tel" className="form-control" id="mobile" placeholder="Mobile" required
-                        value={this.state.mobile} onChange={(e) => this.updateValue(e)} />
+                        value={this.state.mobile}
+                        onChange={(e) => this.updateValue(e)} />
                       <div className="invalid-feedback">Please enter Mobile.</div>
                     </div>
                     {/* btn */}
