@@ -12,10 +12,7 @@ class Login extends React.Component
     constructor(props)
     {
         super(props);
-        this.state = {
-            email:'',
-            password:'',
-        }
+        this.state = {}
     }
 
     updateValue = (event) => {
@@ -27,39 +24,43 @@ class Login extends React.Component
     }
     
     doLogin = (e) => {
-        console.log(this.state);
-        e.preventDefault();
-        let apiAddress = getBase() + "login.php";
-        let form = new FormData();
-        form.append("email", this.state.email);
-        form.append("password", this.state.password);
-        axios({
-          method: 'post',
-          responseType: 'json',
-          url: apiAddress,
-          data: form
-        }).then((response) => {
-          console.log(response.data);
-          let error = response.data[0]['error'];
-          if (error !== 'no')
-            showError(error);
-          else {
+      e.preventDefault();
+       console.log(this.state);
+       //[{"error":"input is missing"}]
+      //  [{"error":"no"},{"success":"yes"},{"message":"login successful"},{"id":"51"}]
+      //[{"error":"no"},{"success":"no"},{"message":"invalid login attempt"}]
+      let apiAddress = getBase() + "login.php";
+      // required input: email, password
+      let form = new FormData();
+      form.append("email",this.state.email);
+      form.append("password",this.state.password);
+      axios({
+        method:'post',
+        responseType:'json',
+        url:apiAddress,
+        data:form
+      }).then((response) => {
+         console.log(response.data); 
+         let error = response.data[0]['error'];
+         if(error!='no')
+         {
+            alert(error);
+         } 
+         else 
+         {
             let success = response.data[1]['success'];
             let message = response.data[2]['message'];
-            if (success === 'no')
-              showError(message);
-            else {
-              let userid = response.data[3]['id'];
-              console.log(userid);
-              showMessage(message);
-              this.props.setCookie('userid',userid);
-              console.log(this.props.cookies);
-              setTimeout(() => {
-                 this.props.navigate("/");
-              }, 5000);
+            if(success === 'yes')
+            {
+                alert(message);
+                this.props.navigate("/");
             }
-          }
-        }).catch((error) => showNetworkError(error));
+            else 
+            {
+                alert(message);
+            }
+         }
+      }).catch((error) => alert(error))
     }
     render()
     {
@@ -103,7 +104,9 @@ class Login extends React.Component
                             <input 
                             type="email" 
                             className="form-control" 
-                            id="email" value={this.state.email} onChange={(e) => this.updateValue(e)}
+                            id="email" 
+                            value={this.state.email} 
+                            onChange={(e) => this.updateValue(e)}
                             placeholder="Email" required />
                             <div className="invalid-feedback">Please enter name.</div>
                           </div>
@@ -116,7 +119,8 @@ class Login extends React.Component
                                 type="password" 
                                 className="form-control fakePassword" 
                                 id="password" 
-                                value={this.state.password} onChange={(e) => this.updateValue(e)}
+                                value={this.state.password} 
+                                onChange={(e) => this.updateValue(e)}
                                 placeholder="password" required />
                                 <span><i className="bi bi-eye-slash passwordToggler" /></span>
                                 <div className="invalid-feedback">Please enter password.</div>

@@ -27,16 +27,24 @@ class Register extends Component {
     e.preventDefault();
     console.log(this.state);
     //api call
+    // required input: email,mobile,password
     let apiAddress = getBase() + "register.php";
     /*
       [{"error":"input is missing"}]
       [{"error":"no"},{"success":"no"},{"message":"email or mobile is already register with us"}]
       [{"error":"no"},{"success":"yes"},{"message":"registered successfully"}]  
     */
+    let form = new FormData();
+    
+    form.append("email",this.state.email);
+    form.append("password",this.state.password);
+    form.append("mobile",this.state.mobile);
+
     axios({
       method: 'post',
       responseType: 'json',
-      url: apiAddress
+      url: apiAddress,
+      data:form
     }).then((response) => {
       console.log(response.data);
       let error = response.data[0]['error'];
@@ -44,7 +52,18 @@ class Register extends Component {
         alert(error)
       }
       else {
-
+        let success = response.data[1]['success'];
+        let message = response.data[2]['message'];
+        if(success === 'yes')
+        {
+            //redirect user on login route
+            alert(message);
+            this.props.navigate("/login");
+        }
+        else 
+        {
+            alert(message);
+        }
       }
     }).catch((error) => {
 
