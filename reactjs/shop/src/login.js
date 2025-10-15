@@ -53,6 +53,9 @@ class Login extends React.Component
             if(success === 'yes')
             {
                 alert(message);
+                //create cookies variable
+                this.props.setCookie("id",response.data[3]['id']);
+                // console.log(this.props.cookies['id']);
                 this.props.navigate("/");
             }
             else 

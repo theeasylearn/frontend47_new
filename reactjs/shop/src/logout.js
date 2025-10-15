@@ -1,21 +1,25 @@
-import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { useCookies } from "react-cookie";
-import { COOKIE_FILE } from "./common";
+import React from "react";
+import WithHook from "./hoc";
 
-const Logout = () => {
-    const navigate = useNavigate();
-    const [, , removeCookie] = useCookies(COOKIE_FILE);
+class Logout extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    useEffect(() => {
-        // Remove the cookie
-        removeCookie('userid');
-        // Debugging: Log before navigation
-        console.log("Redirecting to home page...");
-        // Redirect after 1 second
-        navigate("/");
-    }, [navigate, removeCookie]);
-    return <></>;
-};
+    componentDidMount() {
+        // Delete cookie first
+        this.props.removeCookie('id');
 
-export default Logout;
+        // Use a short delay to avoid alert blocking (or remove alert)
+        setTimeout(() => {
+            alert('logout sucessfull');
+            this.props.navigate("/");
+        }, 0); // Queues navigation after current execution
+    }
+
+    render() {
+        return null; // Or a loading spinner: <div>Logging out...</div>
+    }
+}
+
+export default WithHook(Logout);

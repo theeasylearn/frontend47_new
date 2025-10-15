@@ -5,7 +5,39 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
   }
-
+  GuestMenu = () => {
+    if (this.props.cookies['id'] === undefined) {
+      return (<>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/register">Register</Link>
+        </li>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/login">Login</Link>
+        </li>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/forgot-password">Forgot Password</Link>
+        </li>
+      </>);
+    }
+  }
+  UserMenu = () => {
+    if (this.props.cookies['id'] !== undefined) {
+      return (<>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/cart">Cart</Link>
+        </li>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/checkout">Checkout</Link>
+        </li>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/change-password">Change Password</Link>
+        </li>
+        <li className="nav-item w-100 w-lg-auto">
+          <Link className="nav-link" to="/logout">Logout</Link>
+        </li>
+      </>)
+    }
+  }
   render() {
     return (<div className="border-bottom">
       <div className="py-5">
@@ -52,27 +84,8 @@ class Header extends React.Component {
                   <li className="nav-item w-100 w-lg-auto">
                     <Link className="nav-link" to="/shop">Shop</Link>
                   </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/register">Register</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/login">Login</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/forgot-password">Forgot Password</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/cart">Cart</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/checkout">Checkout</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/change-password">Change Password</Link>
-                  </li>
-                  <li className="nav-item w-100 w-lg-auto">
-                    <Link className="nav-link" to="/logout">Logout</Link>
-                  </li>
+                  {this.GuestMenu()}
+                  {this.UserMenu()}
                 </ul>
               </div>
             </div>
