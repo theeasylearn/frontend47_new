@@ -11,76 +11,53 @@ class Cart extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: [],  // empty array
+            items: [],
             cartTotal: 0
         }
     }
     componentDidMount() {
-        //get all products added by user in cart.
-        const userid = this.props.cookies['userid'];
-        let apiAddress = getBase() + "cart.php?usersid=" + userid;
+        //https://theeasylearnacademy.com/shop/ws/cart.php?usersid=100
+        //[{"error":"input is missing"}]
+        //[{"error":"no"},{"total":0}]
+        /* [
+        {"error":"no"},
+        {"total":4},
+        {"id":"3","cartid":"138","title":"IPhone 15","price":"125000","quantity":"2","weight":"1000","size":"big","photo":"Untitled.jpeg","detail":"seal packed finished product"},
+        {"id":"1","cartid":"139","title":"Acer Laptop","price":"100","quantity":"2","weight":"1000","size":"15 inch","photo":"acer.jpg","detail":"WINDOWS 10 4 GB DDR3 RAM 128 gb ssd hard disk"},{"id":"2","cartid":"140","title":"dell laptop","price":"200","quantity":"1","weight":"1000","size":"15 inch","photo":"dell.jpg","detail":"WINDOWS 10 8 GB DDR3 RAM 512 gb ssd hard disk"},{"id":"6","cartid":"141","title":"one shampoo","price":"500","quantity":"1","weight":"1000","size":"small","photo":"shampoo.jpg","detail":"clinic plus shampoo"}] */
+        let id = this.props.cookies['id'];
+        let apiAddress = getBase() + "cart.php?usersid=" + id;
         axios({
             method: 'get',
             responseType: 'json',
-            url: apiAddress
+            url: apiAddress,
         }).then((response) => {
-            console.log(response.data);
             let error = response.data[0]['error'];
             if (error !== 'no')
-                showError(error);
-            else {
+                alert(error)
+            {
                 let total = response.data[1]['total'];
                 if (total === 0)
                     alert('cart is empty');
                 else {
-                    response.data.splice(0, 2); //delete 2 object from beginning 
-                    //calculate cart total 
-                    var temp = 0;
-                    response.data.map((current) => {
-                        temp += (current.price * current.quantity)
+                    //cart is not empty 
+                    //delete 1st 2 items
+                    response.data.splice(0, 2);
+                    //calculate cart total
+                    let temp=0;
+                    response.data.map((product) => {
+                        temp +=(product.price * product.quantity)
                     });
-
-                    //store data into state array
+                    //copy remaining data into state array
                     this.setState({
                         items: response.data,
-                        cartTotal: temp
+                        cartTotal:temp
                     });
                 }
             }
-        }).catch((error) => showNetworkError(error));
-    }
-    deleteItem = (item) => {
-        console.log(item);
-        let apiAddress = getBase() + "delete_from_cart.php?cartid=" + item.cartid;
-        axios({
-            method: 'get',
-            responseType: 'json',
-            url: apiAddress
-        }).then((response) => {
-            console.log(response.data);
-            let error = response.data[0]['error'];
-            if (error !== 'no')
-                showError(error);
-            else {
-                showMessage(response.data[1]['message']);
-                var itemTotal=0;
-                var temp = this.state.items.filter((current) => {
-                    if(current.cartid !== item.cartid)
-                        return item;
-                    else 
-                    {
-                        itemTotal = current.price * current.quantity;
-                    }
-                });
-
-                this.setState({
-                    items:temp,
-                    cartTotal: this.state.cartTotal - itemTotal
-                });
-            }
-        }).catch((error) => showNetworkError(error));
+        });
 
     }
+
     render() {
         return (<>
             <Header />
@@ -110,23 +87,19 @@ class Cart extends React.Component {
                                         <Link to="/checkout" className="alert-link">checkout now!</Link>
                                     </div>
                                     <ul className="list-group list-group-flush">
-                                        {this.state.items.map((current) => {
+                                        {this.state.items.map((item) => {
                                             return (<li className="list-group-item py-3 ps-0 border-top">
                                                 {/* row */}
                                                 <div className="row align-items-center">
                                                     <div className="col-6 col-md-6 col-lg-7">
                                                         <div className="d-flex">
-                                                            <img src={getImageBase() + "product/" + current.photo} alt="Ecommerce" className="icon-shape icon-xxl" />
+                                                            <img src='http://picsum.photos/200' className="icon-shape icon-xxl" />
                                                             <div className="ms-3">
-                                                                {/* title */}
-                                                                <a href="shop-single.html" className="text-inherit">
-                                                                    <h6 className="mb-0">
-                                                                        {current.title}
-                                                                    </h6>
-                                                                </a>
+                                                                <h6>{item.title}</h6>
+
                                                                 {/* text */}
                                                                 <div className="mt-2 small lh-1">
-                                                                    <span className="text-decoration-none text-inherit" onClick={() => this.deleteItem(current)}>
+                                                                    <span className="text-decoration-none text-inherit" >
                                                                         <span className="me-1 align-text-bottom">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-trash-2 text-success">
                                                                                 <polyline points="3 6 5 6 21 6" />
@@ -143,15 +116,16 @@ class Cart extends React.Component {
                                                     </div>
                                                     {/* input group */}
                                                     <div className="col-4 col-md-4 col-lg-3">
-                                                        {/* input */}
-                                                        {/* input */}
+                                                        {item.price} X {item.quantity}
                                                     </div>
                                                     {/* price */}
                                                     <div className="col-2 text-lg-end text-start text-md-end col-md-2">
-                                                        <span className="fw-bold">₹{current.price}</span>
+                                                        <span className="fw-bold">
+                                                            {item.price * item.quantity}
+                                                        </span>
                                                     </div>
                                                 </div>
-                                            </li>);
+                                            </li>)
                                         })}
                                     </ul>
                                     {/* btn */}
@@ -207,7 +181,6 @@ class Cart extends React.Component {
                         </div>
                     </div></section>
             </main>
-
             <Footer />
         </>);
     }

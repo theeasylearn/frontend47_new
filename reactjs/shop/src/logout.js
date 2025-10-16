@@ -1,11 +1,9 @@
 import React from "react";
 import WithHook from "./hoc";
-
 class Logout extends React.Component {
     constructor(props) {
         super(props);
     }
-
     componentDidMount() {
         // Delete cookie first
         this.props.removeCookie('id');
@@ -21,5 +19,4 @@ class Logout extends React.Component {
         return null; // Or a loading spinner: <div>Logging out...</div>
     }
 }
-
 export default WithHook(Logout);

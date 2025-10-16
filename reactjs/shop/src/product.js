@@ -18,6 +18,30 @@ class Product extends React.Component {
       products: []
     }
   }
+
+  addToCart = (productid) => {
+    let userid = this.props.cookies['id'];
+    //alert(userid);
+    //https://theeasylearnacademy.com/shop/ws/add_to_cart.php?productid=1&usersid=1
+    //[{"error":"input is missing"}]
+    //[{"error":"no"},{"message":"product added into cart"}]
+    let apiAddress = getBase() + "add_to_cart.php?productid=" + productid + "&usersid=" + userid;
+    //alert(apiAddress);
+    axios({
+      method: 'get',
+      responseType: 'json',
+      url: apiAddress
+    }).then((response) => {
+      let error = response.data[0]['error'];
+      if (error !== 'no')
+        alert(error)
+      else {
+        alert(response.data[1]['message']);
+      }
+    }).catch((error) => {
+      alert("oops something went wrong.");
+    })
+  }
   componentDidMount() {
     //create variable to store categoryid of the product 
     let { categoryid } = this.props.params;
@@ -68,13 +92,13 @@ class Product extends React.Component {
               <span className="text-dark">₹ {item.price}</span>
             </div>
             <div>
-              <a href="#!" className="btn btn-primary btn-sm">
+              <button onClick={() => this.addToCart(item.id)} type="button" className="btn btn-primary btn-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width={16} height={16} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-plus">
                   <line x1={12} y1={5} x2={12} y2={19} />
                   <line x1={5} y1={12} x2={19} y2={12} />
                 </svg>
                 Add
-              </a>
+              </button>
             </div>
           </div>
         </div>
