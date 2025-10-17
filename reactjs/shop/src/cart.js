@@ -43,21 +43,57 @@ class Cart extends React.Component {
                     //delete 1st 2 items
                     response.data.splice(0, 2);
                     //calculate cart total
-                    let temp=0;
+                    let temp = 0;
                     response.data.map((product) => {
-                        temp +=(product.price * product.quantity)
+                        temp += (product.price * product.quantity)
                     });
                     //copy remaining data into state array
                     this.setState({
                         items: response.data,
-                        cartTotal:temp
+                        cartTotal: temp
                     });
                 }
             }
         });
 
     }
-
+    deleteFromCart = (cartID) => {
+        //https://theeasylearnacademy.com/shop/ws/delete_from_cart.php?cartid=1
+        //[{"error":"no"},{"message":"product removed from cart"}]
+        //[{"error":"input is missing"}]
+        let apiAddress = getBase() + "delete_from_cart.php?cartid=" + cartID;
+        axios({
+            method: 'get',
+            responseType: 'json',
+            url: apiAddress,
+        }).then((response) => {
+            let error = response.data[0]['error'];
+            if (error !== 'no')
+                showError(error);
+            else {
+                let message = response.data[1]['message'];
+                showMessage(message);
+                
+                //remove item from state array
+                let filteredItems = this.state.items.filter((item) => {
+                    if (item.cartid !== cartID) {
+                        return item;
+                    }
+                });
+                //calculate new cart total
+                let temp = 0;
+                filteredItems.map((product) => {
+                    temp += (product.price * product.quantity)
+                });
+                this.setState({
+                    items: filteredItems,
+                    cartTotal: temp
+                });
+            }
+        }).catch((error) => {
+            showNetworkError();
+        });
+    }
     render() {
         return (<>
             <Header />
@@ -99,7 +135,9 @@ class Cart extends React.Component {
 
                                                                 {/* text */}
                                                                 <div className="mt-2 small lh-1">
-                                                                    <span className="text-decoration-none text-inherit" >
+                                                                    <span
+                                                                        onClick={(e) => this.deleteFromCart(item.cartid)}
+                                                                        className="text-decoration-none text-inherit" >
                                                                         <span className="me-1 align-text-bottom">
                                                                             <svg xmlns="http://www.w3.org/2000/svg" width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="feather feather-trash-2 text-success">
                                                                                 <polyline points="3 6 5 6 21 6" />

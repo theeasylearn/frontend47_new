@@ -33,7 +33,7 @@ class Checkout extends React.Component {
 
         let apiAddress = getBase() + "checkout.php";
         let form = new FormData();
-        form.append('usersid', this.props.cookies['userid']);
+        form.append('usersid', this.props.cookies['id']);
         form.append('fullname', this.state.fullname);
         form.append('address1', this.state.address1);
         form.append('address2', this.state.address2);
@@ -46,9 +46,9 @@ class Checkout extends React.Component {
             method: 'post',
             responseType: 'json',
             url: apiAddress,
-            data:form
+            data: form
         }).then((response) => {
-            console.log(response);
+            console.log(response.data);
             let error = response.data[0]['error'];
             if (error !== 'no')
                 showError(error);

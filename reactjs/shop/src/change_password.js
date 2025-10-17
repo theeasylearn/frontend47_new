@@ -3,7 +3,7 @@ import Header from './header';
 import Footer from './footer';
 /*
     api name : change_password.php
-    //input  input : id (id means userid),password,newpassword (required) 
+    //input  input : id (from cookies),password,newpassword (required) 
       output :
         [{"error":"input is missing"}] 
         [{"error":"no"},{"success":"no","message":"invalid change password attempt"}]
